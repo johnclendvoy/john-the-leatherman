@@ -1,0 +1,71 @@
+
+
+/*
+#AD8A64
+#373D20
+#F1F7EE
+#854D27
+#565264
+*/
+
+
+html, body {
+
+	/*font-family: 'Quicksand', sans-serif;*/
+	/*font-family: 'Raleway', sans-serif;*/
+	font-family: 'Crimson Text', serif;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background: #f1f7ee;
+}
+
+h1, h2, h2, h4, h5, h6 {
+	font-family: 'Maven Pro', sans-serif;
+}
+
+#body {
+	padding-bottom: 80px;   /* Height of the footer + extra space above footer */
+}
+
+#footer {
+	position:absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	height: 40px;   /* Height of the footer */
+	background: #565264;
+	padding-top: 10px;
+}
+
+span.social a{
+	margin-right:12px;
+	font-size:16px;
+}
+
+/* Needed for footer to stay in place */
+#wrapper {
+	min-height: 100%;
+	position: relative;
+}
+
+/* for the animated background */
+
+#animated-bg > canvas {
+	position: fixed; top: 0; left: 0; z-index: -1;
+} 
+
+#animated-bg {
+	min-height: 100%;
+	position: relative; z-index: 2;
+ }
+
+
+ /** END STRUCTURAL **/
+
+ /* navbar */
+ ul.navigation li {
+ 	text-decoration: none;
+ 	display:inline-block;
+ }
+
