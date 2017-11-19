@@ -7,7 +7,7 @@
 				<li><a class="{{setActive('admin')}}" href="/admin">Admin</a></li>
 				@endif
 				<li><a class="{{setActive('about')}}" href="/about">About</a></li>
-				<li><a class="{{setActive('leather')}}" href="/leather">Leather</a></li>
+				<li><a class="{{setActive('leather')}}" href="/leather">Products</a></li>
 				<li><a class="{{setActive('contact')}}" href="/contact">Contact</a></li>
 			</ul>
 	

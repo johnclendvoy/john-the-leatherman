@@ -9,17 +9,18 @@
 		<div id="animated-bg">
 
 			<header>
+				<h1>John The Leatherman</h1>
 				@include('partials.navbar')
 			</header>
 
 			<div id="body">
 
 				<div class="container">
-					<h1>John The Leatherman</h1>
-					@if(!empty(Request::segment(1)))
+
+{{-- 					@if(!empty(Request::segment(1)))
 						<h2>@yield('title')</h2>
 					@endif
-				</div>
+ --}}				</div>
 
 
 
