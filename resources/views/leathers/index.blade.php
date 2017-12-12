@@ -1,25 +1,13 @@
 @extends('layouts.public')
 
-@section('title', 'Browse Products')
+@section('title', 'Products')
 
 @section('content')
 
 	@include('partials.leathernav')
 
 	<div class="container">
-		<div class="row">
-			@forelse ($leathers as $leather)
-				<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
-					<a href="/leather/{{ $leather->id }}">
-						<img class="img img-fluid" src="{{ $leather->image('thumbnail') }}" alt="A picture of {{ $leather->name }}"/>
-					</a>
-				</div>
-			@empty
-				<div class="col-xs-12">
-					<p>No items match your search.</p>
-				</div>
-			@endforelse
-		</div>
+		@include('partials.leathergrid')
 	</div>
 @stop
 

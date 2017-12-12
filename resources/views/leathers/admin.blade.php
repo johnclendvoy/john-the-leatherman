@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title', 'ALL LEATHER ITEMS')
+@section('title', 'All Leather Items')
 
 @section('content')
 
@@ -30,11 +30,18 @@
 						<td>{{ $leather->category->name }}</td>
 						<td><span class="color-swatch" style="background-color:{{ $leather->color->hexcode }}"></span></td>
 						<td>{{ $leather->price }}</td>
-						<td>{{ $leather->active == '1' ? 'Yes' : 'No' }}</td>
 
-						<td><a class="btn btn-default" href="/leather/{{ $leather->id }}">View</a></td>
-						<td><a class="btn btn-default" href="/leather/{{ $leather->id }}/add-photos">Photos</a></td>
-						<td><a class="btn btn-default" href="/leather/{{ $leather->id }}/edit">Edit</a></td>
+						<td>
+							@if($leather->active)
+							<span class="badge badge-success">Yes</span>
+							@else
+							<span class="badge badge-danger">No</span>
+							@endif
+						</td>
+
+						<td><a class="btn btn-secondary square" href="/leather/{{ $leather->id }}">View</a></td>
+						<td><a class="btn btn-secondary square" href="/leather/{{ $leather->id }}/add-photos">Photos</a></td>
+						<td><a class="btn btn-secondary square" href="/leather/{{ $leather->id }}/edit">Edit</a></td>
 						<td>
 							@component('components.delete_button')
 							/leather/{{ $leather->id }}

@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title', 'ADD/EDIT LEATHER ITEM')
+@section('title', 'Add/Edit Leather Item')
 
 @section('content')
 
@@ -26,6 +26,11 @@
 			<div class="form-group">
 				<label>Description</label>
 				<textarea class="form-control" type="text" name="description">{{ !empty($leather) ? $leather->description : old('description') }}</textarea>
+			</div>
+
+			<div class="form-group">
+				<label>Dimensions</label>
+				<textarea class="form-control" type="text" name="dimensions">{{ !empty($leather) ? $leather->dimensions : old('dimensions') }}</textarea>
 			</div>
 
 			<div class="form-group">

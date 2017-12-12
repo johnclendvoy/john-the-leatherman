@@ -9,26 +9,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		
 	<!-- fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Crimson+Text|Maven+Pro" rel="stylesheet">
-	
-{{-- 	<link href="https://fonts.googleapis.com/css?family=Raleway|Roboto+Slab" rel="stylesheet">
+	{{-- <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Maven+Pro" rel="stylesheet"> --}}
+	{{-- <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet"> --}}
+	<link href="https://fonts.googleapis.com/css?family=Raleway|Roboto+Slab" rel="stylesheet">
 
-	<link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
- --}}
 	<!-- bootstrap -->
-	{{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> --}}
-
-	{{-- <link href="/plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"> --}}
-
 	<link href="/plugins/bootstrap-4.0.0-beta.2-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-	
-	{{-- <link href="/plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"> --}}
 
  	{{-- plugins --}}
  	<link rel="stylesheet" type="text/css" href="/plugins/dropzone/dropzone.css">
  	<link rel="stylesheet" type="text/css" href="/plugins/slick/slick.css">
  	<link rel="stylesheet" type="text/css" href="/plugins/slick/slick-theme.css">
- 	<link rel="stylesheet" href="/plugins/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+ 	<link rel="stylesheet" href="/plugins/fancybox-master/dist/jquery.fancybox.css" type="text/css" media="screen" />
  	<link rel="stylesheet" href="/plugins/sweetalert-master/dist/sweetalert.css" type="text/css"/>
 
  	{{-- icons --}}

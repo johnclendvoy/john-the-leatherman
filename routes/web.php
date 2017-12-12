@@ -11,18 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-// static
+// Static
 Route::get('/', 'PageController@home');
 Route::get('/home', 'PageController@home');
+Route::get('/about', 'PageController@about');
 Route::get('/contact', 'PageController@contact');
 Route::post('/contact', 'EmailController@sendContactEmail');
-Route::get('/about', 'PageController@music');
 
-//Categories
+// Dashboard
+Route::get('/admin', 'PageController@dashboard');
+
+
+// MODELS
+
+// Categories
 Route::get('/categories/admin', 'CategoryController@admin');
 Route::resource('categories', 'CategoryController');
 
@@ -42,7 +44,16 @@ Route::group(['prefix' => 'leather'], function(){
 });
 Route::resource('leather', 'LeatherController');
 
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/register', function(){
+	return back();
+});
+Route::post('/register', function(){
+	return back();
+});
+Route::get('/logout', function(){
+	Auth::logout();
+	return back();
+});
+

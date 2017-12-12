@@ -13,15 +13,50 @@ html, body {
 
 	/*font-family: 'Quicksand', sans-serif;*/
 	/*font-family: 'Raleway', sans-serif;*/
-	font-family: 'Crimson Text', serif;
+	/*font-family: 'Crimson Text', serif;*/
+	/*font-family: 'Roboto Slab', serif;*/
+	/*font-family: 'Maven Pro', sans-serif;*/
+	font-family: 'Raleway', sans-serif;
+	
+	color: #323232;
+	text-transform:uppercase;
+	font-size: 14px;
 	margin: 0;
 	padding: 0;
 	height: 100%;
-	background: #f1f7ee;
+	/*background: #f1f7ee;*/
+	/*background-color: #ffffff;*/
+	background-color: #ebebe7;
 }
 
-h1, h2, h2, h4, h5, h6 {
-	font-family: 'Maven Pro', sans-serif;
+p {
+	text-transform: none;
+}
+
+a {
+	color:#323232;
+	-webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+p a {
+	color:green;
+}
+
+a:hover {
+	color: #91a055;
+	text-decoration: none;
+	font-weight: 900;
+}
+
+h1, h2, h2, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	/*font-family: 'Raleway', sans-serif;*/
+	/*font-family: 'Maven Pro', sans-serif;*/
+}
+
+h1 , .h1{
+	margin-top:50px;
+	margin-bottom:40px;
 }
 
 #body {
@@ -34,8 +69,11 @@ h1, h2, h2, h4, h5, h6 {
 	right: 0;
 	left: 0;
 	height: 40px;   /* Height of the footer */
-	background: #565264;
+	/*background: #ffffff;*/
+	background-color: #fefefa;
 	padding-top: 10px;
+
+	border-top: 1px solid #cecece ;
 }
 
 span.social a{
@@ -57,15 +95,172 @@ span.social a{
 
 #animated-bg {
 	min-height: 100%;
-	position: relative; z-index: 2;
+	position: relative; 
+	z-index: 2;
  }
 
 
  /** END STRUCTURAL **/
 
- /* navbar */
- ul.navigation li {
- 	text-decoration: none;
- 	display:inline-block;
- }
 
+ /* navbar */
+
+.title-bar {
+	background-color: #ffffff;
+	margin-bottom: 20px;
+	padding: 20px;
+	border-bottom: 1px solid #cecece;
+}
+
+div.leather-item {
+	margin-top:15px;
+	margin-bottom:15px;
+}
+
+div.popup {
+	background-color: #fff;
+	/*opacity: 0.7;*/
+	position:absolute;
+	bottom:0px;
+	right:15px;
+	left:15px;
+	border-bottom:1px solid #cecece;
+	max-height:0px;
+	color:transparent;
+	-webkit-transition: all 0.8s ease;
+    transition: all 0.8s ease;
+}
+
+
+div.leather-item:hover > div.popup {
+	color:#000;
+	max-height: 100%;
+	padding:20px 0px;
+}
+
+span.title-bar-right{
+	margin-top:4px;
+}
+
+span.title-bar-right a{
+	margin-left:20px;
+	font-size:1.2em;
+}
+
+span.price{
+	color:#91a055;
+	margin-right:20px;
+}
+
+/*leather nav*/
+.color-swatch {
+	padding-right:20px;
+}
+
+a.btn.btn-secondary.square{
+	padding: 15px 20px;
+	background-color:#ffffff;
+	color:#222;
+
+	border:none;
+	border-bottom: 1px solid #cecece;
+	border-radius: 0px;
+	margin-right:5px;
+	margin-bottom:10px;
+	-webkit-transition: background-color 0.4s;
+    transition: background-color 0.4s;
+}
+
+a.btn.btn-secondary.square.active{
+	background-color:#cbcbc7;
+	background-color:#cbcbc7;
+
+	color:#222;
+
+	border:none;
+	border-bottom:1px solid #aeaeae;
+	box-shadow: none;
+}
+
+
+a.btn.btn-secondary.square:hover{
+	background-color:#dadaee;
+	background-color:#91a055;
+	color:#222;
+}
+/*	border: 3px solid #222;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+*/
+/*
+a.btn.btn-secondary.square{
+	padding: 15px 20px;
+	background-color:#ffffff;
+	color:#222;
+	border: 2px solid #222;
+	border-radius: 0px;
+	margin-right:10px;
+	margin-bottom:10px;
+	-webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+}
+
+a.btn.btn-secondary.square.active{
+	background-color:#dadaee;
+	color:#222;
+	border: 3px solid #222;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	box-shadow:none;
+}
+
+
+a.btn.btn-secondary.square:hover{
+	background-color:#dadaee;
+	color:#222;
+	border: 3px solid #222;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+}
+*/
+
+
+/* Custom for Slick Slider */
+.slick-prev:before {
+	color: #2E3436;
+}
+.slick-next:before {
+	color: #2E3436;
+}
+.slick-slide {
+	width:140px;
+	padding: 5px;
+}
+.cursor-zoom-in:hover {
+	cursor: zoom-in;
+}
+
+
+/*extra spacing*/
+.mt0 {
+	margin-top:0px;
+}
+.mt10 {
+	margin-top:10px;
+}
+.mt20 {
+	margin-top:20px;
+}
+.mt40 {
+	margin-top:40px;
+}
+
+.mb10 {
+	margin-bottom:10px;
+}
+.mb20 {
+	margin-bottom:20px;
+}
+.mb30 {
+	margin-bottom:30px;
+}

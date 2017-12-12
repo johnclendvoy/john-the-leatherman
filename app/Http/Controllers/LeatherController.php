@@ -8,7 +8,7 @@ use Image;
 use App\Color;
 use App\Photo;
 use App\Leather;
-use App\Category;
+use App\Category;	
 
 use Illuminate\Support\Facades\Redirect;
 
@@ -19,11 +19,6 @@ class LeatherController extends Controller
 {
 	use ImageTrait;
 
-	// info that belongs in the title jumbotron
-	public $social = [
-		['site'=>'facebook', 'url'=>'http://facebook.com/johntheleatherman'],
-		['site'=>'instagram', 'url'=>'http://instagram.com/johntheleatherman']
-	];
 
 	public function __construct()
     {
@@ -41,30 +36,29 @@ class LeatherController extends Controller
 	// List of all leather items
 	public function index()
 	{
-		$links = $this->social;
 		$category = []; //all
 
 		$categories = Category::all();
 		$colors = Color::all();
-		$leathers = Leather::all()->where('active', 1)->sortByDesc('id');
+		$leathers = Leather::active()->get()->sortByDesc('id');
 
-		return view('leathers.index', compact('links', 'categories', 'category', 'leathers', 'colors'));
+		return view('leathers.index', compact('categories', 'category', 'leathers', 'colors'));
 	}
 
 	// Show a specific leather item
 	public function show(Leather $leather)
 	{
-		$links = $this->social;
 		$categories = Category::all();
 		$colors = Color::all();
 
-		return view('leathers.show', compact('links', 'categories', 'colors', 'leather'));
+		$leathers = $leather->similar(4);
+
+		return view('leathers.show', compact('categories', 'colors', 'leather', 'leathers'));
 	}
 
 	// Show all Items of a given category
 	public function category(Request $request, $slug)
 	{
-		$links = $this->social;
 		$categories = Category::all();
 		$colors = Color::all();
 
@@ -78,13 +72,12 @@ class LeatherController extends Controller
 			$leathers = $leathers->intersect($with_color);
 		}
 
-		return view('leathers.index', compact('links', 'color', 'colors', 'category', 'categories', 'leathers'));
+		return view('leathers.index', compact('color', 'colors', 'category', 'categories', 'leathers'));
 	}
 
 	// Show all Items of a given color
 	public function color(Request $request, $slug)
 	{
-		$links = $this->social;
 		$categories = Category::all();
 		$colors = Color::all();
 
@@ -98,7 +91,7 @@ class LeatherController extends Controller
 			$leathers = $leathers->intersect($with_category);
 		}
 
-		return view('leathers.index', compact('links', 'color', 'colors', 'category', 'categories', 'leathers'));
+		return view('leathers.index', compact('color', 'colors', 'category', 'categories', 'leathers'));
 	}
 
 	// Show a form to add a leather item

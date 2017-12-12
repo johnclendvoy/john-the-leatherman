@@ -18,7 +18,7 @@
 <script type="text/javascript" src="/plugins/dropzone/dropzone.js"></script>
 <script type="text/javascript" src="/plugins/slick/slick.min.js"></script>
 <script type="text/javascript" src="/plugins/sweetalert-master/dist/sweetalert.min.js"></script>
-<script type="text/javascript" src="/plugins/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+<script type="text/javascript" src="/plugins/fancybox-master/dist/jquery.fancybox.js"></script>
 
 <!-- animated bg -->
 {{-- <script language="javascript" type="text/javascript" src="/js/animated_bg.js"></script> --}}

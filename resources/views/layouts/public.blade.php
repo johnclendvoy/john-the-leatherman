@@ -5,12 +5,26 @@
 
 	<body>
 		{{-- <div id="wrapper"> --}}
-
 		<div id="animated-bg">
 
 			<header>
-				<h1>John The Leatherman</h1>
-				@include('partials.navbar')
+				<div class="title-bar" style="width:100%;">
+					<span>
+						<a href="/" class="h3">John The Leatherman</a>
+					</span>
+					<span class="float-right title-bar-right">
+						@if(Auth::check())
+						<a href="/admin">Admin</a>
+						@endif
+						<a href="/leather">Products</a>
+						<a href="/contact">Info</a>
+
+						@if(\Session::has('cart'))
+						<a href="/cart">Cart</a>
+						@endif
+
+					</span>
+				</div>
 			</header>
 
 			<div id="body">

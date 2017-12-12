@@ -1,0 +1,18 @@
+-> set up emails w sendgrid
+
+Launch
+
+-> dropdowns for color select
+-> dropdowns for category select
+
+Launch
+
+-> show add to cart button and price
+-> show price in grid
+-> cart in session
+-> cart view
+-> orders
+-> add stripe payments
+-> add for sale banner/flag
+
+Launch

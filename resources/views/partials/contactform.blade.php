@@ -4,10 +4,11 @@
 	{{ csrf_field() }}
 
 		<div class="text-center form-group col-sm-12">
-			@if($sent)
+			@if(\Session::pull('sent'))
 				<h3>Thanks for the message</h3>
 				<p> I'll get back to you as soon as I can.</p>
 			@else
+				<h1>Contact John</h1>
 				<h3>Let me know what you think.</h3>
 				<p>If you have any questions, comments, to request a custom leather item, let me know by filling out the form below.</p>
 			@endif
