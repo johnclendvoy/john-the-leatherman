@@ -9,7 +9,26 @@
 
 			<header>
 				<div class="title-bar" style="width:100%;">
-					<span>
+
+					<div class="row">
+					<div class="col-sm-8 col-xs-12 text-center text-sm-left">
+						<a href="/" class="h3">John The Leatherman</a>
+					</div>
+					<div class="col-sm-4 col-xs-12 text-center text-sm-right title-bar-right">
+						@if(Auth::check())
+						<a href="/admin">Admin</a>
+						@endif
+						<a href="/leather">Products</a>
+						<a href="/contact">Info</a>
+
+						@if(\Session::has('cart'))
+						<a href="/cart">Cart</a>
+						@endif
+					</div>
+					</div>
+
+					{{--}}
+					<span class="text-center text-md-left">
 						<a href="/" class="h3">John The Leatherman</a>
 					</span>
 					<span class="float-right title-bar-right">
@@ -24,6 +43,7 @@
 						@endif
 
 					</span>
+					{{--}}
 				</div>
 			</header>
 

@@ -138,11 +138,11 @@ div.leather-item:hover > div.popup {
 	padding:20px 0px;
 }
 
-span.title-bar-right{
+.title-bar-right{
 	margin-top:4px;
 }
 
-span.title-bar-right a{
+.title-bar-right a{
 	margin-left:20px;
 	font-size:1.2em;
 }
