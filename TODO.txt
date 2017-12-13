@@ -1,10 +1,10 @@
--> set up emails w sendgrid
--> fix footer on mobile
+-> dropdowns for color select
+-> dropdowns for category select
 
 Launch
 
--> dropdowns for color select
--> dropdowns for category select
+-> featured Items
+-> Home page 
 
 Launch
 
