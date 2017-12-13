@@ -11,10 +11,17 @@
 
 		<div class="row">
 
-			<div class="col-sm-12">
-				<p>John C. Lendvoy is an artist from Moose Jaw, Saskatchewan, Canada. About {{Carbon::createFromFormat('Y-m-d', '2010-06-01')->diffForHumans() }}, after buying a do-it-yourself shoe kit from <a href="https://www.youtube.com/watch?v=dHSVYJPXcvw">Simple Shoes</a>, he found himself with a few of the basic skills needed for leathercraft. Between classes and wrestling tournaments at the University of Regina, he always found some time to hone his craft, slowly accumulating tools and techniques to elevate his work to a new level.</p>
+			@if(\Session::pull('mail_sent'))
+			<div class="col-sm-12 alert alert-success text-center">
+				<h5>Message Received</h5>
+				<p>Thank you for the message! I will get back to you as soon as I can.</p>
+			</div>
+			@endif
 
-				<p>Each item he has ever made is uniquely one-of-a-kind, and  carefully measured, cut, tooled, stitched, and finished by hand. John makes sure everything he creates is done so with the maximum amount of quality and attention to detail possible. He makes leather products that are functional and durable first, while also being a unique piece of artwork.</p>
+			<div class="col-sm-12">
+				<p>John C. Lendvoy is an artist from Moose Jaw, Saskatchewan, Canada. About {{Carbon::createFromFormat('Y-m-d', '2010-06-01')->diffForHumans() }}, after buying a do-it-yourself shoe kit from <a href="https://www.youtube.com/watch?v=dHSVYJPXcvw">Simple Shoes</a>, he found himself with some of the basic skills needed for leathercraft. Between classes and wrestling tournaments at the University of Regina, he was always able to find some time to hone his craft, slowly accumulating tools and techniques to elevate his work to the next level.</p>
+
+				<p>Each item John has ever made is uniquely one-of-a-kind, that means carefully measured, cut, tooled, stitched, and finished by hand. John makes sure everything he creates is done with the maximum amount of quality and attention to detail. He makes leather products that are functional and durable first, while also being a unique piece of artwork.</p>
 
 				<p>John The Leatherman is currently based in Medicine Hat, Alberta, Canada, but would be willing to work with you on your own piece no matter where you are in the world!</p>
 			</div>

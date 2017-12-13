@@ -1,4 +1,5 @@
 -> set up emails w sendgrid
+-> fix footer on mobile
 
 Launch
 

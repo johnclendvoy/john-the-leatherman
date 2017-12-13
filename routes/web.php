@@ -16,7 +16,7 @@ Route::get('/', 'PageController@home');
 Route::get('/home', 'PageController@home');
 Route::get('/about', 'PageController@about');
 Route::get('/contact', 'PageController@contact');
-Route::post('/contact', 'EmailController@sendContactEmail');
+Route::post('/contact', 'EmailController@contact');
 
 // Dashboard
 Route::get('/admin', 'PageController@dashboard');
