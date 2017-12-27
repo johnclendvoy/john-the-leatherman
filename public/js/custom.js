@@ -28,7 +28,7 @@ $(document).ready(function(){
     	// var color = $('#color-select').find(":selected").val();
     	// var category = $('#category-select').find(":selected").val();
     	// var form = $('#leather-nav-form').
-    	$('leather-nav-form').submit();
+    	$('#leather-nav-form').submit();
     }
 
     // leather nav select boxes
