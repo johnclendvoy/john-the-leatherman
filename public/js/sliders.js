@@ -31,6 +31,10 @@ $('.slider-nav-1').slick({
   	centerMode: true,
   	focusOnSelect: true,
   	variableWidth: true,
+      // prevArrow:'<i class="fa fa-check"></i>',
+      // nextArrow:'<i class="fa fa-check"></i>'
+      // prevArrow:"<button type='button' class='slick-prev pull-left'><i class='fa fa-check' aria-hidden='true'></i></button>",
+      //   nextArrow:"<button type='button' class='slick-next pull-right'><i class='fa fa-angle-right' aria-hidden='true'></i></button>"
 });
 
 $('.slider-nav-2').slick({
@@ -41,6 +45,8 @@ $('.slider-nav-2').slick({
   	centerMode: true,
   	focusOnSelect: true,
   	variableWidth: true,
+      // prevArrow:"<button type='button' class='slick-prev pull-left'><i class='fa fa-check' aria-hidden='true'></i></button>",
+      //   nextArrow:"<button type='button' class='slick-next pull-right'><i class='fa fa-angle-right' aria-hidden='true'></i></button>"
 });
 
 $('.slider-nav-3').slick({
@@ -51,6 +57,10 @@ $('.slider-nav-3').slick({
   	centerMode: true,
   	focusOnSelect: true,
   	variableWidth: true,
+      // prevArrow:'<i class="fa fa-check"></i>',
+      // nextArrow:'<i class="fa fa-check"></i>'
+      // prevArrow:"<button type='button' class='slick-prev pull-left'><i class='fa fa-check' aria-hidden='true'></i></button>",
+      //   nextArrow:"<button type='button' class='slick-next pull-right'><i class='fa fa-angle-right' aria-hidden='true'></i></button>"
 });
 
 $(document).ready(function() {

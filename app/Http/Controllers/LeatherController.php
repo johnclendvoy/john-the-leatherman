@@ -28,21 +28,40 @@ class LeatherController extends Controller
 	// List of all leather items
 	public function admin()
 	{
+
 		$leathers = Leather::all();
 
 		return view('leathers.admin', compact( 'leathers'));
 	}
 
 	// List of all leather items
-	public function index()
+	public function index(Request $request)
 	{
-		$category = []; //all
+		// to show in dropdowns
+		$categories = Category::all()->filter(function($category){
+			return count($category->leathers);
+		});
+		$colors = Color::all()->filter(function($color){
+			return count($color->leathers);
+		});
 
-		$categories = Category::all();
-		$colors = Color::all();
 		$leathers = Leather::active()->get()->sortByDesc('id');
 
-		return view('leathers.index', compact('categories', 'category', 'leathers', 'colors'));
+		// current selections
+		$category = []; //all
+		$color = []; //all
+		if(!empty($request->category))
+		{
+			$category = Category::where('slug', $request->category)->get()->first();
+			$leathers = $leathers->where('category_id', $category->id);
+		}
+		if(!empty($request->color))
+		{
+			$color = Color::where('slug', $request->color)->get()->first();
+			$leathers = $leathers->where('color_id', $color->id);
+		}
+
+		return view('leathers.index', compact('categories', 'colors', 'leathers', 'category', 'color'));
 	}
 
 	// Show a specific leather item

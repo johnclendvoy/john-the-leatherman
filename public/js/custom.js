@@ -1,60 +1,5 @@
 $(document).ready(function(){
 
-	// leathers.show
-  	$('.slider-for-1').slick({
-		  slidesToShow: 1,
-		  slidesToScroll: 1,
-		  arrows: false,
-		  fade: true,
-		  asNavFor: '.slider-nav-1'
-	});
-
-  	$('.slider-for-2').slick({
-		  slidesToShow: 1,
-		  slidesToScroll: 1,
-		  arrows: false,
-		  fade: true,
-		  asNavFor: '.slider-nav-2'
-	});
-
-  	$('.slider-for-3').slick({
-		  slidesToShow: 1,
-		  slidesToScroll: 1,
-		  arrows: false,
-		  fade: true,
-		  asNavFor: '.slider-nav-3'
-	});
-
-	$('.slider-nav-1').slick({
-	  	slidesToShow: 1,
-	  	slidesToScroll: 1,
-	  	asNavFor: '.slider-for-1',
-	  	dots: true,
-	  	centerMode: true,
-	  	focusOnSelect: true,
-	  	variableWidth: true,
-	});
-
-	$('.slider-nav-2').slick({
-	  	slidesToShow: 2,
-	  	slidesToScroll: 1,
-	  	asNavFor: '.slider-for-2',
-	  	dots: true,
-	  	centerMode: true,
-	  	focusOnSelect: true,
-	  	variableWidth: true,
-	});
-
-	$('.slider-nav-3').slick({
-	  	slidesToShow: 3,
-	  	slidesToScroll: 1,
-	  	asNavFor: '.slider-for-3',
-	  	dots: true,
-	  	centerMode: true,
-	  	focusOnSelect: true,
-	  	variableWidth: true,
-	});
-
 	$(".fancybox").fancybox();
 
 	$('.delete-button').click(function(){
@@ -73,5 +18,28 @@ $(document).ready(function(){
 			form.submit();
 		});
 	});
+
+
+    $('.select2').select2();
+
+
+    function getLeather()
+    {
+    	// var color = $('#color-select').find(":selected").val();
+    	// var category = $('#category-select').find(":selected").val();
+    	// var form = $('#leather-nav-form').
+    	$('leather-nav-form').submit();
+    }
+
+    // leather nav select boxes
+    $('#color-select').change(function(e){
+    	e.preventDefault();
+    	getLeather();
+    });
+    $('#category-select').change(function(e){
+    	e.preventDefault();
+    	getLeather();
+    });
+
 
 });

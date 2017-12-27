@@ -12,7 +12,7 @@
 
 					<div class="row">
 					<div class="col-sm-8 col-xs-12 text-center text-sm-left">
-						<a href="/" class="h3">John The Leatherman</a>
+						<a href="/" class="h2"><strong>John The Leatherman</strong></a>
 					</div>
 					<div class="col-sm-4 col-xs-12 text-center text-sm-right title-bar-right">
 						@if(Auth::check())

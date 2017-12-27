@@ -19,6 +19,8 @@
 <script type="text/javascript" src="/plugins/slick/slick.min.js"></script>
 <script type="text/javascript" src="/plugins/sweetalert-master/dist/sweetalert.min.js"></script>
 <script type="text/javascript" src="/plugins/fancybox-master/dist/jquery.fancybox.js"></script>
+<script type="text/javascript" src="/plugins/select2-4.0.6-rc.1/dist/js/select2.min.js"></script>
+
 
 <!-- animated bg -->
 {{-- <script language="javascript" type="text/javascript" src="/js/animated_bg.js"></script> --}}

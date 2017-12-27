@@ -21,12 +21,6 @@ trait ImageTrait {
         	['name' => 'thumbnail_small', 'width' => 80, 'height' => 80, 'fit' => false],
 			['name' => 'thumbnail', 'width' => 400, 'height' => 400, 'fit' => false],
 			['name' => 'feature', 'width' => 800, 'height' => 600, 'fit' => false],
-        ],
-        'projects' => [
-            ['name' => 'thumbnail_small', 'width' => 80, 'height' => 80, 'fit' => false],
-            ['name' => 'thumbnail', 'width' => 400, 'height' => 400, 'fit' => false],
-            ['name' => 'feature', 'width' => 800, 'height' => 800, 'fit' => false],
-            ['name' => 'full', 'width' => 2048, 'height' => 2048, 'fit' => false], 
         ]
     ];
     

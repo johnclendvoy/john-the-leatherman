@@ -34,15 +34,19 @@ Route::resource('colors', 'ColorController');
 
 // Leathers
 Route::group(['prefix' => 'leather'], function(){
+
+	//admin 
 	Route::get('/admin', 'LeatherController@admin');
-	Route::get('/category/{slug}', 'LeatherController@category');
-	Route::get('/color/{slug}', 'LeatherController@color');
 	Route::get('/{leather}/add-photos', 'LeatherController@addPhotos');
 	Route::delete('/{photo}/delete-photo', 'LeatherController@destroyPhoto');
 	Route::post('/{leather}/upload-photos', 'LeatherController@uploadPhotos');
 	Route::post('/{leather}/feature-photo/{photo}', 'LeatherController@setFeature');
+	// Route::get('/category/{slug}', 'LeatherController@category');
+	// Route::get('/color/{slug}', 'LeatherController@color');
 });
 Route::resource('leather', 'LeatherController');
+Route::get('leather/{leather}/{slug?}', 'LeatherController@show');
+
 
 Auth::routes();
 

@@ -48,7 +48,7 @@
 		{{-- small photos --}}
 		@if(count($leather->photos))
 			<div class="row">
-				<div class="col-sm-12">
+				<div class="col-10 offset-1 col-sm-12 offset-sm-0">
 					<div class="slider-nav-{{ $leather->slider_class }}">
 
 						{{-- show the feature image first --}}
