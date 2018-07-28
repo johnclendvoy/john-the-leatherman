@@ -18,6 +18,11 @@ Route::get('/about', 'PageController@about');
 Route::get('/contact', 'PageController@contact');
 Route::post('/contact', 'EmailController@contact');
 
+Route::get('/phpinfo',function() {
+	echo phpinfo();
+});
+
+
 // Dashboard
 Route::get('/admin', 'PageController@dashboard');
 
