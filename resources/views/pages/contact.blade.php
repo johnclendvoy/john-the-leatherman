@@ -21,9 +21,9 @@
 			<div class="col-sm-12">
 				<p>John C. Lendvoy is an artist from Moose Jaw, Saskatchewan, Canada. About {{Carbon::createFromFormat('Y-m-d', '2010-06-01')->diffForHumans() }}, after buying a do-it-yourself shoe kit from <a href="https://www.youtube.com/watch?v=dHSVYJPXcvw">Simple Shoes</a>, he found himself with some of the basic skills needed for leathercraft. Between classes and wrestling tournaments at the University of Regina, he was always able to find some time to hone his craft, slowly accumulating tools and techniques to elevate his work to the next level.</p>
 
-				<p>Each item John has ever made is uniquely one-of-a-kind, that means carefully measured, cut, tooled, stitched, and finished by hand. John makes sure everything he creates is done with the maximum amount of quality and attention to detail. He makes leather products that are functional and durable first, while also being a unique piece of artwork.</p>
+				<p>Each item John has ever made is uniquely one-of-a-kind. That means carefully measured, cut, tooled, stitched, and finished by hand. John makes sure everything he creates is done with the maximum amount of quality and attention to detail. He makes leather products that are functional and durable, while also being a unique piece of artwork.</p>
 
-				<p>John The Leatherman is currently based in Medicine Hat, Alberta, Canada, but would be willing to work with you on your own piece no matter where you are in the world!</p>
+				<p>John The Leatherman is currently based in Medicine Hat, Alberta, Canada, but would be willing to work with you on your own piece wherever you are in the world!</p>
 			</div>
 		</div>
 
@@ -73,23 +73,31 @@
 			
 				<form method="POST" action="/contact">
 					{{ csrf_field() }}
+					{!! app('captcha')->render(); !!}
 
-
+					@if(count($errors))
+					<div class="row form-group alert alert-danger">
+						<ul>
+							@foreach($errors->all() as $e)
+							<li>{{$e}}</li>
+							@endforeach
+						</ul>
+					</div>
+					@endif
 					<div class="row form-group">
 						<div class="col-sm-6 {{ $errors->has('name') ? 'has-error' : '' }}">
 							<label>Your Name</label>
-							<input name="name" type="text" class="form-control" value="{{ old('name') }}">
+							<input required name="name" type="text" class="form-control" value="{{ old('name') }}">
 						</div>
 						<div class="col-sm-6 {{ $errors->has('email') ? 'has-error' : '' }}">
 							<label>Your Email Address</label>
-							<input name="email" type="text" class="form-control rect" value="{{ old('email') }}">
+							<input required name="email" type="email" class="form-control rect" value="{{ old('email') }}">
 						</div>
 					</div>
-
 					<div class="row form-group">
 						<div class="col-sm-12 {{ $errors->has('comments') ? 'has-error' : '' }}">
 							<label>Your Message</label>
-							<textarea name="comments" class="form-control rect" >{{ old('comments') }}</textarea>
+							<textarea required name="comments" class="form-control rect" >{{ old('comments') }}</textarea>
 						</div>
 					</div>
 					<div class="row form-group">

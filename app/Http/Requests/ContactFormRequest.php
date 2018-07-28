@@ -27,6 +27,7 @@ class ContactFormRequest extends FormRequest
             'name' => 'required',
             'email' => 'required|email',
             'comments' => 'required',
+            'g-recaptcha-response' => 'required|captcha'
         ];
     }
 
@@ -36,6 +37,7 @@ class ContactFormRequest extends FormRequest
             'name.required' => 'You must enter your name.',
             'email.required' => 'You must enter your email address.',
             'comments.required' => 'You must enter some sort of message.',
+            'g-recaptcha-response.*' => 'Please prove you are not a robot by filling out the reCAPTCHA.'
         ];
     }
 }
