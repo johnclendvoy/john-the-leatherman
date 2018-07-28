@@ -73,7 +73,7 @@
 			
 				<form method="POST" action="/contact">
 					{{ csrf_field() }}
-					{!! app('captcha')->render(); !!}
+					{!! app('captcha')->render() !!}
 
 					@if(count($errors))
 					<div class="row form-group alert alert-danger">
