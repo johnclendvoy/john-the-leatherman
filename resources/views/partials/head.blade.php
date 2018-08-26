@@ -1,10 +1,21 @@
 <head>
-	<title>John The Leatherman {{ request(	)->segment(1) == '' ? '' : '|'}} @yield('title')</title>
-	<meta keyword="John Lendvoy, John C Lendvoy, John The Leatherman, Leather, Walllets, Handmade, Medicine Hat, Canada, Bracelets, Purses, Tooled, Craft">
-	<meta author="John C. Lendvoy"> </meta>
-	<meta description="John The Leatherman creates one-of-a-kind leather goods. He focuses on unique design, while keeping his products highly functional and durable.">
+	<title>John The Leatherman {{ request()->segment(1) == '' ? '' : '|'}} @yield('title')</title>
+
+	<!-- meta -->
 	<meta charset="UTF-8">
+	<meta name="keywords" content="John Lendvoy, John C Lendvoy, John The Leatherman, Leather, Walllets, Handmade, Medicine Hat, Canada, Bracelets, Purses, Tooled, Craft">
+	<meta name="author" content="John C. Lendvoy">
+	<meta name="description" content="John The Leatherman creates one-of-a-kind leather goods. He focuses on unique design, while keeping his products highly functional and durable.">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- favicons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#91a055">
+	<meta name="msapplication-TileColor" content="#91a055">
+	<meta name="theme-color" content="#91a055">
 		
 	<!-- fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway|Roboto+Slab" rel="stylesheet">
@@ -12,7 +23,7 @@
 	<!-- bootstrap -->
 	<link href="/plugins/bootstrap-4.0.0-beta.2-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
- 	{{-- plugins --}}
+ 	<!-- plugins -->
  	<link rel="stylesheet" type="text/css" href="/plugins/dropzone/dropzone.css">
  	<link rel="stylesheet" type="text/css" href="/plugins/slick/slick.css">
  	<link rel="stylesheet" type="text/css" href="/plugins/slick/slick-theme.css">
@@ -20,15 +31,12 @@
  	<link rel="stylesheet" type="text/css" href="/plugins/sweetalert-master/dist/sweetalert.css"/>
  	<link rel="stylesheet" type="text/css" href="/plugins/select2-4.0.6-rc.1/dist/css/select2.min.css"/>
 
- 	{{-- icons --}}
+ 	<!-- icons -->
  	<link rel="stylesheet" href="/plugins/font-awesome-4.7.0/css/font-awesome.min.css">
 
- 	<!--custom -->
+ 	<!-- custom -->
 	<link  rel="stylesheet" type="text/css" href="/css/style.css">
 
 	@yield('css')
-
-	{{-- p5 background --}}
-	{{-- <script type="text/javascript" src="/plugins/p5/libraries/p5.js"></script> --}}
 
 </head>
