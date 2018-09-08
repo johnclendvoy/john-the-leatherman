@@ -19,11 +19,15 @@ class Leather extends Model
 	}
 
 	// ATTRIBUTES
-
-	// return the number of photos there are in the slider, if there are 3 or more, return 3
+	
 	public function getClassAttribute()
 	{
 		return 'leathers';
+	}
+
+	public function getInCartAttribute()
+	{
+		return in_array($this->id, session('cart'));
 	}
 
 	// return the number of photos there are in the slider, if there are 3 or more, return 3
@@ -43,12 +47,15 @@ class Leather extends Model
 		return 3;
 	}
 
-	// helpers
+	// HELPERS
+
+
+	// return a collection of $num leather items that are in the same category or the same color as the current leather item
 	public function similar($num)
 	{
 		$same_color = Leather::active()->where('id', '!=', $this->id)->where('color_id', $this->color_id)->get();
 		$same_cat = Leather::active()->where('id', '!=', $this->id)->where('category_id', $this->category_id)->get();
-		$matches = $same_color->union($same_cat)->unique('id');
+		$matches = $same_cat->union($same_color)->unique('id');
 
 		if($matches->count() < $num)
 		{
@@ -58,7 +65,7 @@ class Leather extends Model
 		if($matches->count() < $num)
 		{
 			$remaining = $num - $matches->count();
-			$non_matches = Leather::all()->diff($matches)->take($remaining);
+			$non_matches = Leather::active()->get()->diff($matches)->take($remaining);
 			$matches = $matches->merge($non_matches);
 		}
 		return $matches->take($num);
