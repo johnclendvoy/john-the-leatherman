@@ -30,11 +30,6 @@ class PageController extends Controller
 		return view('pages.home', compact('categories', 'leathers', 'colors'));
 	}
 
-	public function about()
-	{
-		return view('pages.contact');
-	}
-
 	public function contact() 
 	{
 		return view('pages.contact');
@@ -49,6 +44,9 @@ class PageController extends Controller
 		return view('pages.contact');
 	}
 
+	/** 
+	* Admin Dashboard
+	*/
 	public function dashboard() 
 	{
 		$objects = [
@@ -59,6 +57,4 @@ class PageController extends Controller
 		];
 		return view('pages.dashboard', compact('objects'));
 	}
-	
-	
 }
