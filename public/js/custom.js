@@ -22,24 +22,28 @@ $(document).ready(function(){
 
     $('.select2').select2();
 
-
-    function getLeather()
+    // select 2 with color swatches
+    function colorSwatchOption(state)
     {
-    	// var color = $('#color-select').find(":selected").val();
-    	// var category = $('#category-select').find(":selected").val();
-    	// var form = $('#leather-nav-form').
-    	$('#leather-nav-form').submit();
+    	if(state.title == '') {
+			return state.text;
+    	}
+		return $(
+	    	'<span class="color-swatch" style="background-color:' + state.title + ';"></span>&nbsp;' + state.text + '</span>'
+	  	);
     }
 
-    // leather nav select boxes
-    $('#color-select').change(function(e){
-    	e.preventDefault();
-    	getLeather();
+	$("#color-select").select2({
+	  	templateResult: colorSwatchOption,
+	  	templateSelection: colorSwatchOption,
+	});
+    
+    //leather nav select boxes
+    $('#color-select').change(function(){
+    	$('#leather-nav-form').submit();
     });
-    $('#category-select').change(function(e){
-    	e.preventDefault();
-    	getLeather();
+    $('#category-select').change(function(){
+    	$('#leather-nav-form').submit();
     });
-
 
 });

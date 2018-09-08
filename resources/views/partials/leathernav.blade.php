@@ -36,10 +36,10 @@
 		</div>
 		<div class="row mt20 mb20">
 			<div class="col-sm-12">
-				<select name="color" id="color-select" class="select2 form-control square">
-					<option value="">All Colors</option>
+				<select name="color" id="color-select" class="form-control square">
+					<option value="">Any Colour</option>
 					@foreach ($colors as $col)
-						<option {{!empty($color) && $col->id == $color->id ? 'selected' : ''}} value="{{$col->slug}}">{{$col->name}}</option>
+						<option title="{{$col->hexcode}}" {{!empty($color) && $col->id == $color->id ? 'selected' : ''}} value="{{$col->slug}}">{{$col->name}}</option>
 					@endforeach
 				</select>
 			</div>
@@ -47,4 +47,3 @@
 	</form>
 
 </div>
-
