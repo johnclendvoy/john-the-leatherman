@@ -1,10 +1,11 @@
 
 <div id="footer" class="border-bottom">
 	<div class="container">
-		<div class="row">
+		<div class="row mt5">
 
 			<div class="col-sm-8 col-xs-12 text-center text-sm-left">
-				<span>&copy; {{ date('Y') }}, <a target="_blank" href="http://johnclendvoy.ca">John C. Lendvoy</a></span>
+				<a class="mr10" href="/terms">Terms</a>
+				<a href="/credits">Credits</a>
 			</div>
 
 			<div class="col-sm-4 col-xs-12 text-center text-sm-right">
@@ -15,5 +16,12 @@
 			</div>
 
 		</div>
+
+		<div class="row mt10">
+				<div class="col-sm-8 col-xs-12 text-center text-sm-left">
+				<span class="text-md-grey">&copy; {{ date('Y') }}, <a class="text-md-grey" target="_blank" href="http://johnclendvoy.ca">John C. Lendvoy</a></span>
+			</div>
+		</div>
+
 	</div>
 </div>

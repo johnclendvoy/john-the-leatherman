@@ -13,9 +13,9 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 	<link rel="manifest" href="/site.webmanifest">
-	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#91a055">
-	<meta name="msapplication-TileColor" content="#91a055">
-	<meta name="theme-color" content="#91a055">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#a3b16c">
+	<meta name="msapplication-TileColor" content="#a3b16c">
+	<meta name="theme-color" content="#ffffff">
 		
 	<!-- fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway|Roboto+Slab" rel="stylesheet">
