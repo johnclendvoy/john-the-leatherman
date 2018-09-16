@@ -19,31 +19,5 @@ $(document).ready(function(){
 		});
 	});
 
-
     $('.select2').select2();
-
-    // select 2 with color swatches
-    function colorSwatchOption(state)
-    {
-    	if(state.title == '') {
-			return state.text;
-    	}
-		return $(
-	    	'<span class="color-swatch" style="background-color:' + state.title + ';"></span>&nbsp;' + state.text + '</span>'
-	  	);
-    }
-
-	$("#color-select").select2({
-	  	templateResult: colorSwatchOption,
-	  	templateSelection: colorSwatchOption,
-	});
-    
-    //leather nav select boxes
-    $('#color-select').change(function(){
-    	$('#leather-nav-form').submit();
-    });
-    $('#category-select').change(function(){
-    	$('#leather-nav-form').submit();
-    });
-
 });
