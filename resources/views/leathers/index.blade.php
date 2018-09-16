@@ -3,10 +3,12 @@
 @section('title', 'Products')
 
 @section('content')
-
-	@include('partials.leathernav')
-
 	<div class="container">
+		@component('components.title_row')
+			Product Gallery
+			@slot('icon', 'svg.leather')
+		@endcomponent
+		@include('partials.leathernav')
 		@include('partials.leathergrid')
 	</div>
 @stop

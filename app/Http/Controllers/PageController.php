@@ -20,20 +20,18 @@ class PageController extends Controller
 
 	public function home()
 	{
-		$category = []; //all
-		$color = []; //all
+		$category = null; //all
+		$color = null; //all
+		$available = null; //all
+		$leather = null;
 
 		$categories = Category::all();
 		$colors = Color::all();
 		$leathers = Leather::all()->where('active', 1)->sortByDesc('id');
 
-		return view('pages.home', compact('categories', 'leathers', 'colors'));
+		return view('pages.home', compact('categories', 'leathers', 'colors', 'category', 'color', 'available', 'leather'));
 	}
 
-	public function contact() 
-	{
-		return view('pages.contact');
-	}
 	public function email() 
 	{
 		// send mail

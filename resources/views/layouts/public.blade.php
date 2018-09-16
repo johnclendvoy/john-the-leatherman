@@ -14,5 +14,6 @@
 		@include('partials.scripts')
 		@yield('scripts')
 		@yield('js')
+		@yield('leathernav-js')
 	</body>
 </html>

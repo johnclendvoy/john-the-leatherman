@@ -14,11 +14,29 @@ function setActive($tab_name)
 	}
 }
 
-function active($val1, $val2)
+
+/*
+* used for show active uttons in the leathernav
+*/
+function active($val1, $val2 = null)
 {
-	if($val1 == $val2)
+	if(empty($val1) && empty($val2))
 	{
 		return 'active';
+	}
+	if (!empty($val1) && !empty($val2))
+	{
+		if(is_string($val1) && is_string($val2))
+		{
+			if($val1 == $val2)
+			{
+				return 'active';
+			}
+		}
+		else if($val1->slug == $val2->slug)
+		{
+			return 'active';
+		}
 	}
 }
 

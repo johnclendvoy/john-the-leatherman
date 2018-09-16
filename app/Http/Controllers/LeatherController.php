@@ -28,9 +28,7 @@ class LeatherController extends Controller
 	// List of all leather items
 	public function admin()
 	{
-
 		$leathers = Leather::all();
-
 		return view('leathers.admin', compact( 'leathers'));
 	}
 
@@ -50,6 +48,10 @@ class LeatherController extends Controller
 		// current selections
 		$category = []; //all
 		$color = []; //all
+		$available = null;
+		$leather = null;
+
+		// filtering based on leather nav selections
 		if(!empty($request->category))
 		{
 			$category = Category::where('slug', $request->category)->get()->first();
@@ -60,8 +62,14 @@ class LeatherController extends Controller
 			$color = Color::where('slug', $request->color)->get()->first();
 			$leathers = $leathers->where('color_id', $color->id);
 		}
+		if(!empty($request->available))
+		{
+			$available = $request->available;
+			$is_available = $request->available == 'sale' ? 1 : 0;
+			$leathers = $leathers->where('available', $is_available);
+		}
 
-		return view('leathers.index', compact('categories', 'colors', 'leathers', 'category', 'color'));
+		return view('leathers.index', compact('categories', 'colors', 'leathers', 'category', 'color', 'available', 'leather'));
 	}
 
 	// Show a specific leather item
