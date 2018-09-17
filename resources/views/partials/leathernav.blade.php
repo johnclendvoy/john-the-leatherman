@@ -37,7 +37,7 @@
 <div class="d-block d-sm-none">
 	<div class="row">
 		<div class="col-sm-12">
-			<select name="category" id="category-select" class="leathernav-select select2 form-control square">
+			<select data-name="category" id="category-select" class="leathernav-select select2 form-control square">
 				<option value="">All Categories</option>
 				@foreach ($categories as $cat)
 					<option {{!empty($category) &&	$cat->id == $category->id ? 'selected' : ''}} value="{{$cat->slug}}">{{$cat->name}}</option>
