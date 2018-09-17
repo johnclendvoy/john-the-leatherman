@@ -5,17 +5,22 @@
 @stop
 
 @section('content')
-
-	@include('partials.leathernav')
-
 	<div class="container">
 
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 text-center">
-				<h1 class="mt0">{{$leather->name}}</h1>
-			</div>
-		</div>
+		@component('components.title_row')
+			{{$leather->name}}
+			@slot('icon', 'svg.leather')
+		@endcomponent
 
+		{{-- @include('partials.leathernav') --}}
+
+{{-- 		<form action="/cart" method="post" id="add-to-cart">
+			{{csrf_field()}}
+			<input type="hidden" name="leather_id" value="{{$leather->id}}">
+		</form>
+ --}}
+
+		{{-- @include('partials.buy-now-button') --}}
 
 		{{-- large photo --}}
 		<div class="row">
@@ -75,33 +80,30 @@
 			<div class="col-sm-12 col-md-8">
 				<h3>Description</h3>
 				<p>{{$leather->description}}</p>
+				@if($leather->available)
+				<p>This one-of-a-kind item was handmade with care by John. Once it is sold, there may never be another one just like it.</p>
+				@endif
 			</div>
 			@if(!empty($leather->dimensions))
 				<div class="col-sm-12 col-md-4">
+					<h3>Colour</h3>
+					<p>{{$leather->color->name}} - <a href="/leather?color={{$leather->color->slug}}">See More This Colour</a></p>
 					<h3>Dimensions</h3>
 					<p>{{$leather->dimensions}}</p>
 				</div>
 			@endif
 
-			{{--}}
-			@if($leather->available)
-			<div class="col-sm-12 text-center">
-				<span class="h1 price">${{$leather->price}}</span>
-				<a class="btn btn-secondary btn-lg square">Add To Cart</a>
-				<p>{{$leather->dimensions}}</p>
-			</div>
-			@endif
-			--}}
 		</div>
+
+		{{-- @include('partials.buy-now-button') --}}
 
 		<div class="row text-center">
 			<div class="col-sm-12">
 				<h4>
-					@if(Auth::check())
+					@auth
 					<a href="/leather/{{$leather->id}}/edit"><span class="glyphicon glyphicon-pencil"></span></a>
 					<a href="/leather/{{$leather->id}}/add-photos"><span class="glyphicon glyphicon-picture"></span></a>
-					@endif
-					{{-- {{ $leather->name }} --}}
+					@endauth
 				</h4>
 			</div>
 
@@ -121,6 +123,14 @@
 
 @section('js')
 	<script src="/js/sliders.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.cart-button').click(function(){
+				$('#add-to-cart').submit();
+			});
+		});
+	</script>
 @stop
 
 
