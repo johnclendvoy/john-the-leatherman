@@ -1,10 +1,9 @@
 @if(count($errors))
-	<div class="form-group col-sm-12 bg-danger">
-		<h4>Errors</h4>
-		<ol>
-			@foreach ($errors->all() as $error)
-				<li>{{ $error }}</li>
+	<div class="row form-group alert alert-danger">
+		<ul>
+			@foreach($errors->all() as $e)
+			<li>{{$e}}</li>
 			@endforeach
-		</ol>
+		</ul>
 	</div>
 @endif
