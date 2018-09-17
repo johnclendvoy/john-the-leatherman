@@ -20,6 +20,8 @@ class PageController extends Controller
 
 	public function home()
 	{
+		// TODO make this a new page with featured items/ banner images etc
+
 		$category = null; //all
 		$color = null; //all
 		$available = null; //all
@@ -30,16 +32,6 @@ class PageController extends Controller
 		$leathers = Leather::all()->where('active', 1)->sortByDesc('id');
 
 		return view('pages.home', compact('categories', 'leathers', 'colors', 'category', 'color', 'available', 'leather'));
-	}
-
-	public function email() 
-	{
-		// send mail
-		Mail::to('johnclendvoy@gmail.com')->send(new ContactFormMail);
-
-		// set sent
-		$request->session()->put('sent', true);
-		return view('pages.contact');
 	}
 
 	/** 
