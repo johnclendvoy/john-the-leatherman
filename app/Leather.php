@@ -25,6 +25,16 @@ class Leather extends Model
 		return 'leathers';
 	}
 
+	public function getSlugAttribute()
+	{
+		return str_slug($this->name);
+	}
+
+	public function getUrlAttribute()
+	{
+		return '/leather/'.$this->id.'/'.$this->slug;
+	}
+
 	public function getInCartAttribute()
 	{
 		return in_array($this->id, session('cart'));
@@ -118,4 +128,9 @@ class Leather extends Model
 		return $this->belongsTo('App\Color', 'color_id');
 	}
 
+	public function order()
+	{
+		$this->belongsTo('App/Order');
+	}
+	
 }

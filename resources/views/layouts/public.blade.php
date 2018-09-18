@@ -6,7 +6,9 @@
 		<div id="animated-bg">
 			@include('partials.header')
 			<div id="body">
-				@yield('content')
+				<div class="container">
+					@yield('content')
+				</div>
 				@include('partials.footer')
 			</div> <!-- #body -->
 		</div> <!-- #animated-bg -->

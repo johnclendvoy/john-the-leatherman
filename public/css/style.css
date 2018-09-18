@@ -34,6 +34,8 @@ html, body {
 
 p {
 	text-transform: none;
+	line-height: 1.8em;
+	font-size: 1.1em;
 }
 
 a {
@@ -152,12 +154,18 @@ span.price{
 
 /*leather nav*/
 .color-swatch {
-	padding-right:20px;
+	display: inline-block; 
+	vertical-align: middle;
+	margin-right:5px;
+	height: 1.3em;
+	width: 1.3em;
+	border-radius: 50%;
 }
 
 /* Secondary Button (White) */
 
-a.btn.btn-secondary.square{
+.btn.btn-secondary.square{
+	text-transform: uppercase;
 	padding: 15px 20px;
 	background-color: var(--white);
 	color:var(--black);
@@ -171,7 +179,7 @@ a.btn.btn-secondary.square{
     transition: background-color 0.8s;
 }
 
-a.btn.btn-secondary.square.active{
+.btn.btn-secondary.square.active{
 	background-color:var(--lt-grey);
 	color:var(--black);
 
@@ -180,7 +188,7 @@ a.btn.btn-secondary.square.active{
 	box-shadow: none;
 }
 
-a.btn.btn-secondary.square:hover{
+.btn.btn-secondary.square:hover{
 	background-color:var(--lt-grey);
 	background-color:var(--md-green);
 	color:var(--black);
@@ -276,7 +284,13 @@ div.shift-down {
 }
 
 .text-md-grey {
-	color: var(--md-grey);
+	color: var(--md-grey) !important;
+}
+.text-dk-grey {
+	color: var(--dk-grey) !important;
+}
+.cursor-pointer {
+	cursor:pointer;
 }
 
 @media only screen and (max-width: 512px) {
