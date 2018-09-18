@@ -19,7 +19,7 @@
 		<div class="col-sm-12">
 			<a data-value="" data-name="color" class="leathernav-button btn btn-secondary square {{ active($color) }}">Any</a>
 			@foreach ($colors as $col)
-				<a data-value="{{$col->slug}}" data-name="color" class="leathernav-button btn btn-secondary square {{active($color, $col)}}"><span class="color-swatch" style="background-color:{{ $col->hexcode }}"></span>&nbsp;<span class="hidden-xs">{{ ucwords($col->name) }}</span></a>
+				<a data-value="{{$col->slug}}" data-name="color" class="leathernav-button btn btn-secondary square {{active($color, $col)}}"><span class="color-swatch" style="background-color:{{ $col->hexcode }}"></span><span class="hidden-xs">{{ ucwords($col->name) }}</span></a>
 			@endforeach
 		</div>
 	</div>

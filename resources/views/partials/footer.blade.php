@@ -10,8 +10,8 @@
 
 			<div class="col-sm-4 col-xs-12 text-center text-sm-right">
 				<span class="social">
-					<a href="https://fb.com/johntheleatherman"><i class="fa fa-facebook"></i></a>
-					<a href="https://instagram.com/johntheleatherman"><i class="fa fa-instagram"></i></a>
+					<a target="_blank" href="https://fb.com/johntheleatherman"><i class="fa fa-facebook"></i></a>
+					<a target="_blank" href="https://instagram.com/johntheleatherman"><i class="fa fa-instagram"></i></a>
 				</span>
 			</div>
 

@@ -15,7 +15,7 @@ Route::get('/shipping-details', 'ShippingDetailsController@create'); // form to 
 Route::post('/shipping-details', 'ShippingDetailsController@store'); // store shipping details in session
 Route::get('/orders/create', 'OrderController@create'); // confirm details and enter payment
 Route::post('/orders', 'OrderController@store'); // make the payment and store the order
-Route::get('/thank-you', 'CartController@thankYou'); // after order stored
+Route::get('/thank-you', 'OrderController@thankYou'); // after order stored
 
 // ADMIN
 

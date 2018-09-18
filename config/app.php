@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'email' => 'johntheleatherman@gmail.com',
 
     /*
     |--------------------------------------------------------------------------
@@ -13,7 +14,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'John The Leatherman'),
 
     /*
     |--------------------------------------------------------------------------
@@ -65,7 +66,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'America/Edmonton',
 
     /*
     |--------------------------------------------------------------------------
@@ -227,6 +228,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Carbon' => Carbon\Carbon::class,
+        'Cart' => App\Cart::class,
     ],
 
 ];
