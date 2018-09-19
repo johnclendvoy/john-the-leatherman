@@ -10,7 +10,7 @@
 	@endcomponent
 					
 	<div class="row">
-		<div class="col-md-4 mb30">
+		<div class="col-md-6 col-lg-4 mb30">
 			<h3>Shopping Bag</h3>
 			<ul>
 				@foreach(Cart::items() as $leather)
@@ -22,10 +22,10 @@
 				Tax: ${{ Cart::tax() }} <br>
 				<span class="h4">Total: ${{ cart::total() }} </span>
 			</p>
-			<small><a class="text-md-grey" href="/bag">&#9664; Edit Shopping Bag</a></small>
+			<small><a class="text-md-grey" href="/bag"><i class="fa fa-fw fa-chevron-left"></i> Edit Shopping Bag</a></small>
 		</div>
 
-		<div class="col-md-4 mb30">
+		<div class="col-md-6 col-lg-4 mb30">
 			<h3>Shipping Details</h4>
 			<p>
 				<i class="fa fa-fw fa-id-card-o"></i> {{session('customer.name')}}<br>
@@ -39,10 +39,10 @@
 			@if(session('customer.notes'))
 			<p>Notes: {{session('customer.notes')}}</p>
 			@endif
-			<small><a class="text-md-grey" href="/shipping-details">&#9664; Edit Shipping Details</a></small>
+			<small><a class="text-md-grey" href="/shipping-details"><i class="fa fa-fw fa-chevron-left"></i> Edit Shipping Details</a></small>
 		</div>
 
-		<div class="col-md-4">
+		<div class="col-md-12 col-lg-4">
 			<h3>Finish Checkout</h4>
 			<p>If the information on this page looks correct, proceed with your payment by clicking the button below.</p>
 
