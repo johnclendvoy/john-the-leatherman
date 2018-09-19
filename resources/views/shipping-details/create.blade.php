@@ -42,7 +42,7 @@
 					<div class="row form-group">
 						<div class="col-sm-12 {{ $errors->has('phone') ? 'has-error' : '' }}">
 							<label>Phone Number <span class="text-muted">(optional)</span></label>
-							<input required name="phone" type="text" class="form-control" value="{{ old('phone', session('customer.phone')) }}">
+							<input name="phone" type="text" class="form-control" value="{{ old('phone', session('customer.phone')) }}">
 						</div>
 					</div>
 					<div class="row form-group">
