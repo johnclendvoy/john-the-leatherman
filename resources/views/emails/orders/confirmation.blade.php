@@ -1,6 +1,6 @@
 <h3>Order Received!</h3>
 
-<p>Thank you for placing you order!</p>
+<p>Thank you for placing your order!</p>
 <p>Your order contains:</p>
 
 <ul>
