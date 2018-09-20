@@ -1,5 +1,5 @@
 <head>
-	<title>John The Leatherman {{ request()->segment(1) == '' ? '' : '|'}} @yield('title')</title>
+	<title>@yield('title') {{ request()->segment(1) == '' ? '' : '|'}} John The Leatherman</title>
 
 	<!-- meta -->
 	<meta charset="UTF-8">

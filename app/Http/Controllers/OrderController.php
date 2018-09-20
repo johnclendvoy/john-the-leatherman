@@ -12,6 +12,17 @@ use App\Http\Requests\OrderFormRequest;
 
 class OrderController extends Controller
 {
+	public function __construct()
+	{
+		$this->middleware('auth')->except('create', 'store', 'thankYou');
+	}
+
+	public function admin()
+	{
+		$orders = Order::all();
+		return view('orders.admin', compact('orders'));
+	}
+
 	public function create()
 	{
 		return view('orders.create');

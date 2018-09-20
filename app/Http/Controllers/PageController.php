@@ -39,12 +39,6 @@ class PageController extends Controller
 	*/
 	public function dashboard() 
 	{
-		$objects = [
-			'leather',
-			'categories',
-			'colors',
-			'messages',
-		];
 		return view('pages.dashboard', compact('objects'));
 	}
 }
