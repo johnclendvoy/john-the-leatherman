@@ -7,6 +7,16 @@
 		Admin Dashboard
 	@endcomponent
 
+	@php
+		$objects = [
+			'leather',
+			'categories',
+			'colors',
+			'orders',
+			// 'messages',
+		];
+	@endphp
+
 	@foreach($objects as $object)
 		<a class="btn btn-default btn-lg" href="/{{$object}}/admin">{{$object}}</a>
 	@endforeach
