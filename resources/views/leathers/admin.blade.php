@@ -7,7 +7,7 @@
 	<div class="container">
 	<a href="/leather/create" class="btn btn-success">Add New Item</a>
 
-		<table class="table">
+		<table class="table table-responsive">
 			<thead>
 				<th>Main Image</th>
 				<th>Name</th>
