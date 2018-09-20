@@ -41,6 +41,11 @@ Route::group(['prefix' => 'leather'], function(){
 Route::resource('leather', 'LeatherController');
 Route::get('leather/{leather}/{slug?}', 'LeatherController@show');
 
+// Orders
+Route::group(['prefix' => 'orders'], function(){
+	Route::get('/admin', 'OrderController@admin');
+});
+
 Auth::routes();
 
 // don't let anyone make an account yet
