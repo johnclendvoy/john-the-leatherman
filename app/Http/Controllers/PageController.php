@@ -22,16 +22,14 @@ class PageController extends Controller
 	{
 		// TODO make this a new page with featured items/ banner images etc
 
-		$category = null; //all
-		$color = null; //all
-		$available = null; //all
-		$leather = null;
-
 		$categories = Category::all();
 		$colors = Color::all();
-		$leathers = Leather::all()->where('active', 1)->sortByDesc('id');
 
-		return view('pages.home', compact('categories', 'leathers', 'colors', 'category', 'color', 'available', 'leather'));
+		// featured leather
+		$feature_title = 'Featured Slim Wallets';
+		$wallet_category = Category::where('slug', 'wallets')->first();
+		$leathers = Leather::where('active', 1)->where('available', 1)->where('category_id', $wallet_category->id)->orderBy('id')->get();
+		return view('pages.home', compact('categories', 'leathers', 'colors', 'feature_title'));
 	}
 
 	/** 

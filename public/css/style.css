@@ -108,7 +108,6 @@ span.social a{
 .title-bar {
 	background-color: var(--white);
 	width: 100%;
-	margin-bottom: 20px;
 	padding: 20px;
 }
 
@@ -259,6 +258,53 @@ div.row.checkout {
 
 .border-bottom {
 	border-bottom:1px solid var(--md-grey);
+}
+
+.home-banner { 
+    /* The image used */
+    background-image: url("/images/home/coasters.jpg");
+
+    /* Full height */
+    min-height: 50vh; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+    overflow:hidden
+
+}
+
+.home-banner-text {
+	position: absolute;
+	top: 50%;
+	/*transform: translateY(-50%);*/
+
+	right:50%;
+	transform: translate(50%, -50%);
+
+	background-color: rgba(0,0,0,0.4);
+	padding-right: 1px;
+	/*padding-left: 1px;*/
+
+	-webkit-box-shadow: 0px 0px 300px 176px rgba(0,0,0,0.4);
+	-moz-box-shadow: 0px 0px 300px 176px rgba(0,0,0,0.4);
+	box-shadow: 0px 0px 300px 176px rgba(0,0,0,0.4);
+}
+
+.home-title {
+	color: var(--white);
+	font-size: 4em;
+ 	font-weight: 800;
+ 	letter-spacing: 0.2em;
+}
+.home-subtitle {
+	color: var(--offwhite);
+	font-size: 2em;
 }
 
 div.flag {

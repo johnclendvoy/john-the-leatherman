@@ -1,7 +1,9 @@
 <?php
 
 // Public Pages
-Route::get('/', 'LeatherController@index');
+// Route::get('/', 'LeatherController@index');
+Route::get('/', 'PageController@home');
+
 Route::view('/terms', 'pages.terms');
 Route::view('/credits', 'pages.credits');
 Route::view('/about', 'pages.about');
