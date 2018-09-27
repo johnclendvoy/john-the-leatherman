@@ -262,7 +262,7 @@ div.row.checkout {
 
 .home-banner { 
     /* The image used */
-    background-image: url("/images/home/coasters.jpg");
+    background-image: url("/images/home/coasters-banner.jpg");
 
     /* Full height */
     min-height: 50vh; 
