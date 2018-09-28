@@ -269,15 +269,17 @@ div.row.checkout {
 	    ),
 	    url("/images/home/coasters-banner.jpg");
 
+
     min-height: 30rem; 
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
-    background-position: fixed;
+    /*background-attachment:scroll;*/
 
-    /*background-position: center;*/
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+	-webkit-background-size: 1800px 900px;
 
     position: relative;
 }
