@@ -33,6 +33,7 @@ class OrderCreatedEmail extends Mailable
     {
         return $this->view('emails.orders.created')
         ->subject('Order Placed on johntheleatherman.com')
+        ->from('johntheleatherman@gmail.com', 'John The Leatherman')
         ->to('johntheleatherman@gmail.com');
     }
 }
