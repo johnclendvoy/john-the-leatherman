@@ -19,6 +19,7 @@
 					<th>Phone</th>
 					<th>Notes</th>
 
+					<th>Stripe</th>
 					<th>Total</th>
 					<th>Items</th>
 					<th>Shipped</th>
@@ -34,6 +35,8 @@
 							<td>{{ $order->address }}</td>
 							<td>{{ $order->phone }}</td>
 							<td>{{ $order->notes }}</td>
+
+							<td>{{ $order->stripe_id }}</td>
 							<td>{{ $order->total_dollars }}</td>
 							<td>
 								<ul>

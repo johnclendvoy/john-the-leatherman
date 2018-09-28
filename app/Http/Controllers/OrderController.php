@@ -38,7 +38,7 @@ class OrderController extends Controller
 
 			// charge the card
 			\Stripe\Stripe::setApiKey(config('services.stripe.secret'));
-			\Stripe\Charge::create([
+			$charge = \Stripe\Charge::create([
 			  "amount" => $total_cents,
 			  "currency" => "cad",
 			  "source" => $request->stripeToken, // obtained with Stripe.js
@@ -46,10 +46,10 @@ class OrderController extends Controller
 			]);
 
 			// find the stripe charge id
-			$stripe_id = '1235';
+			$stripe_id = $charge->id;
 
 			// find the stripe fee
-			$stripe_fee = '123';
+			$stripe_fee = '1';
 
 			// create the order object
 			$order = Order::create([
