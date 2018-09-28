@@ -12,6 +12,20 @@
 
 @section('content')
 
+	
+
+	@component('components.title_row')
+		{{$feature_title}}
+		{{-- @slot('icon', 'svg.leather') --}}
+	@endcomponent
+
+	@include('partials.leathergrid')
+
+	@component('components.cta-button')
+		@slot('link', '/leather')
+		@slot('text', 'Shop All Products')
+	@endcomponent
+
 	@component('components.title_row')
 		The Process
 		{{-- @slot('icon', 'svg.leather') --}}
@@ -41,16 +55,5 @@
 		@slot('link', '/about')
 		@slot('text', 'Learn More')
 	@endcomponent
-
-	@component('components.title_row')
-		{{$feature_title}}
-		{{-- @slot('icon', 'svg.leather') --}}
-	@endcomponent
-
-	@include('partials.leathergrid')
-
-	@component('components.cta-button')
-		@slot('link', '/leather')
-		@slot('text', 'Shop All Products')
-	@endcomponent
+	
 @stop

@@ -273,10 +273,11 @@ div.row.checkout {
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
+    /*background-position: fixed;*/
 
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    /*background-size: cover;*/
 
     position: relative;
 }
@@ -329,6 +330,10 @@ div.row.checkout {
 	.home-subtitle {
 		font-size: 1.5em;
 	}
+	.home-banner { 
+	    min-height: 20rem; 
+	}
+
 }
 
 

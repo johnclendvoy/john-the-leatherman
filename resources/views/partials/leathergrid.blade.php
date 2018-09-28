@@ -1,6 +1,6 @@
 <div class="row">
 	@forelse ($leathers as $leather)
-		<div class="col-6 col-sm-6 col-md-4 col-lg-3 leather-item">
+		<div class="col-6 col-sm-6 col-md-3 col-lg-3 leather-item">
 			<a href="{{$leather->url}}">
 {{-- 				@if($leather->available)
 					<div class="flag">for sale</div>
