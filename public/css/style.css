@@ -260,6 +260,7 @@ div.row.checkout {
 	border-bottom:1px solid var(--md-grey);
 }
 
+/* Home Banner */
 .home-banner { 
     background-image: 
 	    linear-gradient(
@@ -268,7 +269,7 @@ div.row.checkout {
 	    ),
 	    url("/images/home/coasters-banner.jpg");
 
-    min-height: 50vh; 
+    min-height: 30rem; 
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
