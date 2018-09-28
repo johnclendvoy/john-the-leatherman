@@ -30,12 +30,27 @@ class OrderController extends Controller
 
 	public function store(OrderFormRequest $request)
 	{
-		// try {
+
+			foreach(Cart::items() as $leather)
+			{
+				if($leather->available != 1)
+				{
+					Cart::remove($leather->id);
+					return redirect('/orders/create')->withErrors(['item_unavailable' => $leather->name. ' was purchased by someone else after it was added to your bag!']);
+				}
+			}
+
+			if(Cart::empty())
+			{
+				return redirect('/orders/create')->withErrors(['empty_cart' => 'There is nothing in your cart!']);
+			}
+
 			// calculate total for the current cart
 			$total_cents = Cart::total_cents();
 
 			$description = 'Order from ' .session('customer.name').' ('. session('customer.email'). ') at ' . date('Y-m-d H:i:s') . '. Items: '. implode(',', Cart::ids());
 
+		try {
 			// charge the card
 			\Stripe\Stripe::setApiKey(config('services.stripe.secret'));
 			$charge = \Stripe\Charge::create([
@@ -78,11 +93,11 @@ class OrderController extends Controller
 
 			// redirect to thank you message
 			return redirect('/thank-you');
-		// }
-		// catch(\Exception $e)
-		// {
-		// 	return back()->withErrors(['failed_payment' => $e->getMessage()]);
-		// }
+		}
+		catch(\Exception $e)
+		{
+			return back()->withErrors(['failed_payment' => $e->getMessage()]);
+		}
 	}
 
 	public function thankYou()

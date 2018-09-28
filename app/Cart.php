@@ -27,6 +27,11 @@ class Cart extends Model
 		return !empty(session('cart')) && in_array($id, self::ids());
 	}
 
+	public static function empty()
+	{
+		return empty(session('cart'));
+	}
+
 	/**
 	* returns an array of ids
 	*/

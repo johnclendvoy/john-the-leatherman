@@ -44,25 +44,33 @@
 
 		<div class="col-md-12 col-lg-4">
 			<h3>Finish Checkout</h4>
-			<p>If the information on this page looks correct, proceed with your payment by clicking the button below.</p>
+				@if(Cart::empty())
+				<p>Your shopping bag is empty! You need to add at least one item before you can make an order.</p>
+				@else
+				<p>If the information on this page looks correct, proceed with your payment by clicking the button below.</p>
+				@endif
 
 			<form action="/orders" method="POST">
 				{{csrf_field()}}
 
 				@include('partials.form_errors')
 				
-			  	<script
-				    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-				    data-key="{{config('services.stripe.key')}}"
-				    data-amount="{{Cart::total_cents()}}"
-				    data-name="John The Leatherman"
-				    data-description="Checkout"
-				    data-email="{{session('customer.email')}}"
-				    data-image="/apple-touch-icon-180x180.png"
-				    data-locale="auto"
-				    data-zip-code="false">
-			  	</script>
-			  	<img src="/images/stripe/powered_by_stripe_solid.png">
+				@if(Cart::empty())
+			  		<small><a class="text-md-grey" href="/leather"><i class="fa fa-fw fa-chevron-left"></i>Add To Shopping Bag</a></small>
+			  	@else
+				  	<script
+					    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+					    data-key="{{config('services.stripe.key')}}"
+					    data-amount="{{Cart::total_cents()}}"
+					    data-name="John The Leatherman"
+					    data-description="Checkout"
+					    data-email="{{session('customer.email')}}"
+					    data-image="/apple-touch-icon-180x180.png"
+					    data-locale="auto"
+					    data-zip-code="false">
+				  	</script>
+				  	<img src="/images/stripe/powered_by_stripe_solid.png">
+			  	@endif
 			</form>
 		</div>
 
