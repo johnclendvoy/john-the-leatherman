@@ -279,7 +279,7 @@ div.row.checkout {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-	-webkit-background-size: 1800px 900px;
+	/*-webkit-background-size: 1800px 900px;*/
 
     position: relative;
 }
