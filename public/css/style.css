@@ -262,7 +262,12 @@ div.row.checkout {
 
 .home-banner { 
     /* The image used */
-    background-image: url("/images/home/coasters-banner.jpg");
+    background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ),
+    url("/images/home/coasters-banner.jpg");
 
     /* Full height */
     min-height: 50vh; 
@@ -282,50 +287,19 @@ div.row.checkout {
 .home-banner-text {
 	position: absolute;
 	top: 50%;
-	/*transform: translateY(-50%);*/
-
 	right:50%;
 	transform: translate(50%, -50%);
-
-	background-color: rgba(0,0,0,0.4);
-	padding-right: 1px;
-	/*padding-left: 1px;*/
-
-	-webkit-box-shadow: 0px 0px 300px 176px rgba(0,0,0,0.4);
-	-moz-box-shadow: 0px 0px 300px 176px rgba(0,0,0,0.4);
-	box-shadow: 0px 0px 300px 176px rgba(0,0,0,0.4);
 }
 
 .home-title {
-	color: var(--white);
+	color: white;
 	font-size: 4em;
  	font-weight: 800;
  	letter-spacing: 0.2em;
 }
 .home-subtitle {
-	color: var(--offwhite);
+	color: white;
 	font-size: 2em;
-}
-
-div.flag {
-	color: var(--black);
-	background-color: var(--lt-green);
-	border-bottom:1px solid var(--dk-green);
-	text-align: center;
-	margin-right: 10px;
-	padding: 7px 7px;
-	position: absolute;
-	top: -5px;
-	right: 15px;
-	font-weight: 900;
-
-	width: 20%;
-	letter-spacing: 1px;
-
-}
-
-div.shift-down {
-	color:red;
 }
 
 .text-md-grey {
@@ -339,20 +313,23 @@ div.shift-down {
 }
 
 @media only screen and (max-width: 512px) {
-	div.flag{
-		width: 25%;
-		letter-spacing: 0px;
-		padding: 5px 5px;
+	.home-title {
+		font-size: 3em;
 	}
+	.home-subtitle {
+		font-size: 2em;
+	}
+
 }
 
 @media only screen and (max-width: 400px) {
-	div.flag{
-		width: 30%;
-		letter-spacing: 0px;
-		padding: 2px 2px;
+	.home-title {
+		font-size: 2.5em;
+	 	letter-spacing: 0.08em;
 	}
-
+	.home-subtitle {
+		font-size: 1.5em;
+	}
 }
 
 
