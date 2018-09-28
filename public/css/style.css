@@ -261,15 +261,13 @@ div.row.checkout {
 }
 
 .home-banner { 
-    /* The image used */
     background-image: 
-    linear-gradient(
-      rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.2)
-    ),
-    url("/images/home/coasters-banner.jpg");
+	    linear-gradient(
+	      rgba(0, 0, 0, 0.2),
+	      rgba(0, 0, 0, 0.2)
+	    ),
+	    url("/images/home/coasters-banner.jpg");
 
-    /* Full height */
     min-height: 50vh; 
 
     /* Create the parallax scrolling effect */
@@ -280,11 +278,10 @@ div.row.checkout {
     background-size: cover;
 
     position: relative;
-    overflow:hidden
-
 }
 
 .home-banner-text {
+	/* center vertically and horizontally, parent position should be relative */
 	position: absolute;
 	top: 50%;
 	right:50%;
@@ -292,14 +289,16 @@ div.row.checkout {
 }
 
 .home-title {
-	color: white;
+	color: var(--white);
 	font-size: 4em;
+	text-shadow: 0px 2px 0 black;
  	font-weight: 800;
  	letter-spacing: 0.2em;
 }
 .home-subtitle {
-	color: white;
+	color: var(--white);
 	font-size: 2em;
+	text-shadow: 0px 2px 0 black;
 }
 
 .text-md-grey {
@@ -319,7 +318,6 @@ div.row.checkout {
 	.home-subtitle {
 		font-size: 2em;
 	}
-
 }
 
 @media only screen and (max-width: 400px) {
@@ -335,7 +333,6 @@ div.row.checkout {
 
 /*extra spacing*/
 .mr10 {
-
 	margin-right:10px;
 }
 .mt0 {
