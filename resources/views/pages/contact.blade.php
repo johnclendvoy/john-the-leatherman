@@ -56,4 +56,31 @@
 			</form>
 		</div>
 	</div>
+
+	@component('components.title_row')
+		Let's Get Social
+		@slot('icon', 'svg.nodes')
+	@endcomponent
+
+	<div class="row">
+		<div class="col-md-3 text-center mt20">
+			@include('svg.instagram', ['height' => '60px'])
+		</div>
+		<div class="col-md-9 text-center text-md-left">
+			<h4 class="mt20">Instagram Account</h4>
+			<p class="mt10 text-muted"><a target="_blank" href="http://instagram.com/johntheleatherman">@johntheleatherman</a></p>
+
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-3 text-center mt20">
+			@include('svg.facebook', ['height' => '60px'])
+		</div>
+		<div class="col-md-9 text-center text-md-left">
+			<h4 class="mt20">Facebook Page</h4>
+			<p class="mt10 text-muted"><a target="_blank"href="http://fb.com/johntheleatherman">facebook.com/johntheleatherman</a></p>
+		</div>
+	</div>
+
 @stop
