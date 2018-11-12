@@ -43,7 +43,7 @@ class LeatherController extends Controller
 			return count($color->leathers);
 		});
 
-		$leathers = Leather::active()->get()->sortByDesc('id');
+		$leathers = Leather::active()->get()->sortByDesc('available');
 
 		// current selections
 		$category = []; //all
