@@ -44,9 +44,8 @@ Route::resource('leather', 'LeatherController');
 Route::get('leather/{leather}/{slug?}', 'LeatherController@show');
 
 // Orders
-Route::group(['prefix' => 'orders'], function(){
-	Route::get('/admin', 'OrderController@admin');
-});
+Route::get('orders/admin', 'OrderController@admin');
+Route::resource('orders', 'OrderController');
 
 Auth::routes();
 

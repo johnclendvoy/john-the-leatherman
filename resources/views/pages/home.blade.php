@@ -12,8 +12,6 @@
 
 @section('content')
 
-	
-
 	@component('components.title_row')
 		{{$feature_title}}
 		{{-- @slot('icon', 'svg.leather') --}}

@@ -24,6 +24,12 @@ class OrderFormRequest extends FormRequest
     public function rules()
     {
         return [
+            'name' => 'required',
+            'email' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'postal_code' => 'required',
+            'shipped_at' => 'required_with:send_shipped_email|date_format:Y-m-d|nullable',
         ];
     }
 }

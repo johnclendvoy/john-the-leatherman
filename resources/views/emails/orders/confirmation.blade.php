@@ -5,7 +5,7 @@
 
 <ul>
 	@foreach($order->leathers as $leather)
-	<li>{{$leather->color->name}} {{$leather->name}} - ${{$leather->price}}</li>
+	<li>{{$leather->name}} in {{$leather->color->name}} - ${{$leather->price}}</li>
 	@endforeach
 </ul>
 

@@ -11,29 +11,35 @@
 					
 	<div class="row">
 		<div class="col-md-6 col-lg-4 mb30">
-			<h3>Shopping Bag</h3>
+			<h4>Shopping Bag</h4>
 			<ul>
 				@foreach(Cart::items() as $leather)
-				<li>{{$leather->name}} - ${{$leather->price}}</li>
+				<li>{{$leather->name}} : ${{$leather->price}}</li>
 				@endforeach
 			</ul>
 			<p>
 				Subtotal: ${{ Cart::subtotal() }} <br>
-				Tax: ${{ Cart::tax() }} <br>
-				<span class="h4">Total: ${{ cart::total() }} </span>
+				Tax: ${{ Cart::tax() }}<br>
+				<strong class="h5">Total: ${{ cart::total() }} </strong>
 			</p>
 			<small><a class="text-md-grey" href="/bag"><i class="fa fa-fw fa-chevron-left"></i> Edit Shopping Bag</a></small>
 		</div>
 
 		<div class="col-md-6 col-lg-4 mb30">
-			<h3>Shipping Details</h4>
+			<h4>Contact Info</h4>
 			<p>
 				<i class="fa fa-fw fa-id-card-o"></i> {{session('customer.name')}}<br>
 				<i class="fa fa-fw fa-envelope-o"></i> {{session('customer.email')}}<br>
 				@if(session('customer.phone'))
 				 <i class="fa fa-fw fa-phone"></i> {{session('customer.phone')}}<br>
 				@endif
-				<i class="fa fa-fw fa-map-marker"></i> {{session('customer.address')}}<br>
+			</p>
+
+			<h4>Mailing Address</h4>
+			<p>
+				{{session('customer.address')}}<br>
+				{{session('customer.city')}}<br>
+				{{session('customer.postal_code')}}
 			</p>
 
 			@if(session('customer.notes'))
@@ -43,11 +49,11 @@
 		</div>
 
 		<div class="col-md-12 col-lg-4">
-			<h3>Finish Checkout</h4>
+			<h4>Finish Checkout</h4>
 				@if(Cart::empty())
 				<p>Your shopping bag is empty! You need to add at least one item before you can make an order.</p>
 				@else
-				<p>If the information on this page looks correct, proceed with your payment by clicking the button below.</p>
+				<p>If the information on this page is correct, proceed with your payment by clicking the button below.</p>
 				@endif
 
 			<form action="/orders" method="POST">

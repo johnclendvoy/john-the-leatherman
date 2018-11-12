@@ -11,11 +11,11 @@
 
 		<div class="row">
 
-			<div class="col-sm-12 col-md-8 offset-md-2">
+			<div class="col-sm-12 col-lg-8 offset-lg-2">
 				<p>Please provide your shipping information below. Enter your real shipping address as well as a valid email address, so I can send you your items and email you a reciept. Leave your phone nuber if you want just in case I have difficulty shipping to the address you provided. You will be asked for credit card information on the next page.</p>
 			</div>
 
-			<div class="col-sm-12 col-md-8 offset-md-2">
+			<div class="col-sm-12 col-lg-8 offset-lg-2">
 			
 				<form method="POST" action="/shipping-details">
 					{{ csrf_field() }}
@@ -23,22 +23,35 @@
 
 					@include('partials.form_errors')
 
-					<div class="row form-group">
-						<div class="mt10 col-sm-6 {{ $errors->has('name') ? 'has-error' : '' }}">
+					<div class="row">
+						<div class="form-group col-sm-6 {{ $errors->has('name') ? 'has-error' : '' }}">
 							<label>Your Name</label>
 							<input required name="name" type="text" class="form-control" value="{{ old('name', session('customer.name')) }}">
 						</div>
-						<div class="mt10 col-sm-6 {{ $errors->has('email') ? 'has-error' : '' }}">
+						<div class="form-group col-sm-6 {{ $errors->has('email') ? 'has-error' : '' }}">
 							<label>Email Address</label>
 							<input required name="email" type="email" class="form-control rect" value="{{ old('email', session('customer.email')) }}">
 						</div>
 					</div>
 					<div class="row form-group">
 						<div class="col-sm-12 {{ $errors->has('address') ? 'has-error' : '' }}">
-							<label>Physical Shipping Address</label>
-							<textarea required name="address" type="text" class="form-control">{{ old('address', session('customer.address')) }}</textarea>
+							<label>Street Address / Box Number</label>
+							<input required name="address" type="text" class="form-control" value="{{ old('address', session('customer.address')) }}">
 						</div>
 					</div>
+					
+					<div class="row">
+						<div class="form-group col-sm-6 {{ $errors->has('city') ? 'has-error' : '' }}">
+							<label>City</label>
+							<input required name="city" type="text" class="form-control" value="{{ old('city', session('customer.city')) }}">
+						</div>
+
+						<div class="form-group col-sm-6 {{ $errors->has('postal_code') ? 'has-error' : '' }}">
+							<label>Postal Code / Zip Code</label>
+							<input required name="postal_code" type="text" class="form-control" value="{{ old('postal_code', session('customer.postal_code')) }}">
+						</div>
+					</div>
+
 					<div class="row form-group">
 						<div class="col-sm-12 {{ $errors->has('phone') ? 'has-error' : '' }}">
 							<label>Phone Number <span class="text-muted">(optional)</span></label>

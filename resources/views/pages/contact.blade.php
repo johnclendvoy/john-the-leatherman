@@ -32,12 +32,12 @@
 
 				@include('partials.form_errors')
 
-				<div class="row form-group">
-					<div class="col-sm-6 mb10 {{ $errors->has('name') ? 'has-error' : '' }}">
+				<div class="row">
+					<div class="col-sm-6 form-group {{ $errors->has('name') ? 'has-error' : '' }}">
 						<label>Your Name</label>
 						<input required name="name" type="text" class="form-control" value="{{ old('name') }}">
 					</div>
-					<div class="col-sm-6 {{ $errors->has('email') ? 'has-error' : '' }}">
+					<div class="col-sm-6 form-group {{ $errors->has('email') ? 'has-error' : '' }}">
 						<label>Email Address</label>
 						<input required name="email" type="email" class="form-control rect" value="{{ old('email') }}">
 					</div>

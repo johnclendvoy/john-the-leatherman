@@ -27,6 +27,8 @@ class ShippingDetailsFormRequest extends FormRequest
             'name' => 'required',
             'email' => 'required|email',
             'address' => 'required',
+            'city' => 'required',
+            'postal_code' => 'required',
         ];
     }
 }

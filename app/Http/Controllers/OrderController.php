@@ -7,6 +7,7 @@ use Cart;
 use App\Order;
 use Illuminate\Http\Request;
 use App\Mail\OrderCreatedEmail;
+use App\Mail\OrderShippedEmail;
 use App\Mail\OrderConfirmationEmail;
 use App\Http\Requests\OrderFormRequest;
 
@@ -19,7 +20,7 @@ class OrderController extends Controller
 
 	public function admin()
 	{
-		$orders = Order::all();
+		$orders = Order::all()->sortByDesc('created_at');
 		return view('orders.admin', compact('orders'));
 	}
 
@@ -28,27 +29,27 @@ class OrderController extends Controller
 		return view('orders.create');
 	}
 
-	public function store(OrderFormRequest $request)
+	public function store(Request $request)
 	{
 
-			foreach(Cart::items() as $leather)
+		foreach(Cart::items() as $leather)
+		{
+			if($leather->available != 1)
 			{
-				if($leather->available != 1)
-				{
-					Cart::remove($leather->id);
-					return redirect('/orders/create')->withErrors(['item_unavailable' => $leather->name. ' was purchased by someone else after it was added to your bag!']);
-				}
+				Cart::remove($leather->id);
+				return redirect('/orders/create')->withErrors(['item_unavailable' => $leather->name. ' was purchased by someone else after it was added to your bag!']);
 			}
+		}
 
-			if(Cart::empty())
-			{
-				return redirect('/orders/create')->withErrors(['empty_cart' => 'There is nothing in your cart!']);
-			}
+		if(Cart::empty())
+		{
+			return redirect('/orders/create')->withErrors(['empty_cart' => 'There is nothing in your cart!']);
+		}
 
-			// calculate total for the current cart
-			$total_cents = Cart::total_cents();
+		// calculate total for the current cart
+		$total_cents = Cart::total_cents();
 
-			$description = 'Order from ' .session('customer.name').' ('. session('customer.email'). ') at ' . date('Y-m-d H:i:s') . '. Items: '. implode(',', Cart::ids());
+		$description = 'Order from ' .session('customer.name').' ('. session('customer.email'). ') at ' . date('Y-m-d H:i:s') . '. Items: '. implode(',', Cart::ids());
 
 		try {
 			// charge the card
@@ -73,6 +74,8 @@ class OrderController extends Controller
 				'name' => session('customer.name'),
 				'email' => session('customer.email'),
 				'address' => session('customer.address'),
+				'city' => session('customer.city'),
+				'postal_code' => session('customer.postal_code'),
 				'phone' => session('customer.phone'),
 				'notes' => session('customer.notes'),
 				'stripe_fee' => $stripe_fee,
@@ -103,5 +106,36 @@ class OrderController extends Controller
 	public function thankYou()
 	{
 		return view('orders.thank-you');
+	}
+
+
+	public function edit(Order $order)
+	{
+		return view('orders.edit', compact('order'));
+	}
+
+	public function update(OrderFormRequest $request, Order $order)
+	{
+		$order->update($request->all());
+		// if(empty($request->shipped_at)
+		// {
+		// 	$order->shipped_at = null;
+		// }
+		// else
+		// {
+			$order->shipped_at = $request->shipped_at;
+		// }/
+		$order->save();
+		if($request->send_shipped_email)
+		{
+			Mail::send(new OrderShippedEmail($order));
+		}
+		return redirect('/orders/admin');
+	}
+
+	public function destroy(Order $order)
+	{
+		$order->delete();
+		return back();
 	}
 }

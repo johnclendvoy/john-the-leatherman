@@ -6,7 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-	protected $guarded = [];
+	protected $guarded = ['g-recaptcha-response', 'shipped_at' , 'send_shipped_email'];
+	protected $dates = ['created_at', 'updated_at', 'shipped_at'];
+
+	// ATTRIBUTES 
 
 	public function getSubtotalDollarsAttribute()
 	{

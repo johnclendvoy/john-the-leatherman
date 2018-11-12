@@ -5,7 +5,7 @@
 
 <ul>
 	@foreach($order->leathers as $leather)
-	<li>{{$leather->color->name}} {{$leather->name}} (id: {{$leather->id}}) - ${{$leather->price}}</li>
+	<li>{{$leather->name}} in {{$leather->color->name}} (<a href="{{$leather->url}}">#{{$leather->id}}) - ${{$leather->price}}</li>
 	@endforeach
 </ul>
 

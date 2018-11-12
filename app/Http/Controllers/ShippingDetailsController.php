@@ -26,6 +26,8 @@ class ShippingDetailsController extends Controller
 			'name' => $request->name,
 			'email' => $request->email,
 			'address' => $request->address,
+			'city' => $request->city,
+			'postal_code' => $request->postal_code,
 			'phone' => $request->phone,
 			'notes' => $request->notes,
 		]);

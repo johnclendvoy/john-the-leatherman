@@ -10,52 +10,43 @@
 	<div class="row">
 		<div class="col-sm-12">
 
-			<table class="table table-responsive">
+			<table class="table table-responsive table-striped">
 				<thead>
+					<th>ID</th>
 					<th>Created</th>
 					<th>Name</th>
-					<th>Email</th>
-					<th>Address</th>
-					<th>Phone</th>
-					<th>Notes</th>
-
-					<th>Stripe</th>
 					<th>Total</th>
 					<th>Items</th>
 					<th>Shipped</th>
 
-					<th>Actions</th>
+					<th>Edit</th>
+					<th>Delete</th>
 				</thead>
 				<tbody>
 					@foreach($orders as $order)
 						<tr>
+							<td>{{ $order->id }}</td>
 							<td>{{ $order->created_at }}</td>
 							<td>{{ $order->name }}</td>
-							<td>{{ $order->email }}</td>
-							<td>{{ $order->address }}</td>
-							<td>{{ $order->phone }}</td>
-							<td>{{ $order->notes }}</td>
-
-							<td>{{ $order->stripe_id }}</td>
 							<td>{{ $order->total_dollars }}</td>
 							<td>
 								<ul>
 								@foreach($order->leathers as $leather)
-									<li>{{ $leather->name }}</li>
+									<li>{{ $leather->name }} (#{{$leather->id}})</li>
 								@endforeach
 								</ul>
 							</td>
 
 							<td>
-								@if($order->shipped)
-								<span class="badge badge-success">Yes</span>
-								@else
-								<span class="badge badge-danger">No</span>
-								@endif
+								<span class="badge badge-{{$order->shipped_at ? 'success' : 'danger' }}">{{$order->shipped_at ? 'Yes' : 'No' }}</span>
+
 							</td>
 
 							<td>
-								<a href="/orders/{{$order->id}}/edit">Edit</a>
+								<a class="btn btn-sm btn-secondary square" href="/orders/{{ $order->id }}/edit"><i class="fa fa-pencil"></i></a>
+							</td>
+
+							<td>
 								@component('components.delete_button')
 								/orders/{{ $order->id }}
 								@endcomponent
