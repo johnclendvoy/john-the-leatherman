@@ -11,6 +11,12 @@ class Order extends Model
 
 	// ATTRIBUTES 
 
+	public function getUrlAttribute()
+	{
+		return url('orders/'.$this->id);
+	}
+
+
 	public function getSubtotalDollarsAttribute()
 	{
 		return number_format(($this->total - $this->tax) / 100, 2);

@@ -1,11 +1,13 @@
 <h3>Order Received!</h3>
 <p>Order from johntheleatherman.com!</p>
 
+<p><a href="{{$order->url}}">View Order #{{$order->id}}</a></p>
+
 <p>The order contains:</p>
 
 <ul>
 	@foreach($order->leathers as $leather)
-	<li>{{$leather->name}} in {{$leather->color->name}} (<a href="{{$leather->url}}">#{{$leather->id}}) - ${{$leather->price}}</li>
+	<li>{{$leather->name}} in {{$leather->color->name}} (<a href="{{url($leather->url)}}">#{{$leather->id}}</a>) - ${{$leather->price}}</li>
 	@endforeach
 </ul>
 
@@ -16,11 +18,15 @@
 </p>
 
 <h3>Customer Info</h3>
-
-<p>{{$order->name}}</p>
-<p>{{$order->email}}</p>
-<p>{{$order->address}}</p>
-
-<p>{{$order->phone ?? 'no phone given'}}</p>
+<p>
+	{{$order->name}}<br>
+	{{$order->email}}<br>
+	{{$order->phone ?? 'no phone given'}}
+</p>
+<p>
+	{{$order->address}}<br>
+	{{$order->city}}<br>
+	{{$order->postal_code}}
+</p>
 <p>{{$order->notes ?? 'no special notes'}}</p>
 
