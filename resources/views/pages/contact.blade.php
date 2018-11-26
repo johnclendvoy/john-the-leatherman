@@ -39,13 +39,13 @@
 					</div>
 					<div class="col-sm-6 form-group {{ $errors->has('email') ? 'has-error' : '' }}">
 						<label>Email Address</label>
-						<input required name="email" type="email" class="form-control rect" value="{{ old('email') }}">
+						<input required name="email" type="email" class="form-control" value="{{ old('email') }}">
 					</div>
 				</div>
 				<div class="row form-group">
 					<div class="col-sm-12 {{ $errors->has('comments') ? 'has-error' : '' }}">
 						<label>Your Message</label>
-						<textarea required name="comments" class="form-control rect" >{{ old('comments') }}</textarea>
+						<textarea required name="comments" rows="4" class="form-control">{{ old('comments') }}</textarea>
 					</div>
 				</div>
 				<div class="row form-group">

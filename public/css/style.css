@@ -226,6 +226,28 @@ span.price{
     border-radius: 0px;
     border: none;
     border-bottom: 1px solid var(--md-grey);
+    padding:20px;
+}
+
+.select2-selection__rendered {
+	margin-top: -14px;
+}
+
+.select2-selection__arrow {
+	margin-top: 5px;
+}
+
+
+input.form-control {
+	padding:10px;
+	border-radius:0px;
+    border: 1px solid var(--md-grey);
+}
+
+textarea.form-control {
+	padding:10px;
+	border-radius:0px;
+    border: 1px solid var(--md-grey);
 }
 
 /* Custom for Slick Slider */
