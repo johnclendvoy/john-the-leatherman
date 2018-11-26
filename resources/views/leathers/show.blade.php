@@ -20,7 +20,7 @@
 					<div class="slider-for-{{ $leather->slider_class }}">
 						@if(!empty($leather->featurePhoto))
 						<div>
-							<a class="fancybox cursor-zoom-in" rel="group" href="{{ $leather->image('full') }}">
+							<a data-fancybox="gallery" class="cursor-zoom-in" href="{{ $leather->image('full') }}">
 								<img class="img img-fluid" src="{{ $leather->image('feature')}}" alt="A larger picture of {{ $leather->name }}" title="A larger picture of {{ $leather->name }}">
 							</a>
 						</div>
@@ -28,7 +28,7 @@
 						@foreach($leather->photos as $photo)
 							@if(empty($leather->featurePhoto) || $photo->id != $leather->featurePhoto->id)
 							<div>
-								<a data-fancybox="gallery" href="{{ $photo->image('full') }}">
+								<a data-fancybox="gallery" class="cursor-zoom-in" href="{{ $photo->image('full') }}">
 									<img class="img img-fluid" src="{{ $photo->image('feature')}}" alt="A larger picture of {{ $leather->name }}" title="A larger picture of {{ $leather->name }}">
 								</a>
 							</div>
