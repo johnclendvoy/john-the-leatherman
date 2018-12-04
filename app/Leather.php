@@ -63,19 +63,25 @@ class Leather extends Model
 	// return a collection of $num leather items that are in the same category or the same color as the current leather item
 	public function similar($num)
 	{
-		$same_color = Leather::active()->where('id', '!=', $this->id)->where('color_id', $this->color_id)->get();
-		$same_cat = Leather::active()->where('id', '!=', $this->id)->where('category_id', $this->category_id)->get();
-		$matches = $same_cat->union($same_color)->unique('id');
+		$leathers = Leather::active()->where('id', '!=', $this->id)->get();
+		$same_color = $leathers->where('color_id', $this->color_id);
+		$same_category = $leathers->where('category_id', $this->category_id);
 
-		if($matches->count() < $num)
-		{
-			$partial_matches = $same_color->merge($same_cat)->diff($matches);
-			$matches = $matches->merge($partial_matches);
+		// matched both color and category
+		$matches = $same_category->intersect($same_color)->unique('id');
+
+		// if needed add more of same color
+		if($matches->count() < $num) {
+			$matches = $matches->merge($same_color)->unique('id');
 		}
-		if($matches->count() < $num)
-		{
+		// if needed add more of same category
+		if($matches->count() < $num) {
+			$matches = $matches->merge($same_category)->unique('id');
+		}
+		// if needed top off with random items
+		if($matches->count() < $num) {
 			$remaining = $num - $matches->count();
-			$non_matches = Leather::active()->get()->diff($matches)->take($remaining);
+			$non_matches = $leathers->diff($matches)->take($remaining);
 			$matches = $matches->merge($non_matches);
 		}
 		return $matches->take($num);
