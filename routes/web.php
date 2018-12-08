@@ -1,9 +1,7 @@
 <?php
 
 // Public Pages
-// Route::get('/', 'LeatherController@index');
 Route::get('/', 'PageController@home');
-
 Route::view('/terms', 'pages.terms');
 Route::view('/credits', 'pages.credits');
 Route::view('/about', 'pages.about');
@@ -46,6 +44,10 @@ Route::get('leather/{leather}/{slug?}', 'LeatherController@show');
 // Orders
 Route::get('orders/admin', 'OrderController@admin');
 Route::resource('orders', 'OrderController');
+
+// Testimonials
+Route::get('testimonials/admin', 'TestimonialController@admin');
+Route::resource('testimonials', 'TestimonialController');
 
 Auth::routes();
 

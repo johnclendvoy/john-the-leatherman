@@ -17,6 +17,20 @@ class Leather extends Model
 	{
 		return $q->where('active', 1);
 	}
+	public function scopeInactive($q)
+	{
+		return $q->where('active', 0);
+	}
+
+	public function scopeAvailable($q)
+	{
+		return $q->where('available', 1);
+	}
+
+	public function scopeUnavailable($q)
+	{
+		return $q->where('available', 0);
+	}
 
 	// ATTRIBUTES
 	
