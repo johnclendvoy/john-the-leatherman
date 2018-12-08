@@ -1,38 +1,30 @@
 @extends('layouts.public')
-
-@section('title', 'ALL CATEGORIES')
+@section('title', 'All Categories')
 
 @section('content')
 
-	<div class="container">
-	<a href="/categories/create" class="btn btn-success">Add New Item</a>
-
-		<table class="table">
+	@component('components.admin_table')
+		@slot('route', 'categories')
 			<thead>
 				<th>ID</th>
 				<th>Name</th>
-
 				<th>Edit</th>
 				<th>Delete</th>
-
 			</thead>
+
 			<tbody>
 				@foreach($categories as $category)
 					<tr>
 						<td>{{ $category->id }}</td>
 						<td>{{ $category->name }}</td>
-
-						<td><a class="btn btn-default" href="/categories/{{ $category->id }}/edit">Edit</a></td>
+						<td><a class="btn btn-secondary square" href="/categories/{{ $category->id }}/edit"><i class="fa fa-pencil"></i></a></td>
 						<td>
-							<form method="POST" action="/categories/{{ $category->id }}">
-								{{csrf_field()}}
-								<input type="hidden" name="_method" value="DELETE" >
-								<button class="btn btn-danger">Delete</button>
-							</form>
+							@component('components.delete_button')
+								/categories/{{ $category->id }}
+							@endcomponent
 						</td>
 					</tr>
 				@endforeach
 			</tbody>
-		</table>
-	</div>
+	@endcomponent
 @stop

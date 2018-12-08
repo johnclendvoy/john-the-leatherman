@@ -1,10 +1,13 @@
 @extends('layouts.public')
-
-@section('title', 'ADD/EDIT COLOR')
+@section('title')
+	{{empty($color) ? 'Add' : 'Edit'}} Color
+@stop
 
 @section('content')
 
-	<div class="container">
+	@component('components.title_row')
+		@yield('title')
+	@endcomponent
 
 	@if(empty($color))
 		<form method="POST" action="/colors" class="form" enctype="multipart/form-data">
@@ -12,18 +15,9 @@
 		<form method="POST" action="/colors/{{ $color->id }}" class="form" enctype="multipart/form-data">
 		<input type="hidden" name="_method" value="PATCH">
 	@endif
-		{{ csrf_field() }}
+			{{ csrf_field() }}
 
-		@if(count($errors))
-				<div class="form-group col-sm-12 bg-danger">
-					<h4>Errors</h4>
-					<ol>
-						@foreach ($errors->all() as $error)
-							<li>{{ $error }}</li>
-						@endforeach
-					</ol>
-				</div>
-			@endif
+			@include('partials.form_errors')
 
 			<div class="form-group">
 				<label>Name</label>
@@ -39,5 +33,5 @@
 				<button class="btn btn-primary" type="submit">{{ empty($color) ? 'Add' : 'Update' }}</button>
 			</div>
 		</form>
-	</div>
+
 @stop

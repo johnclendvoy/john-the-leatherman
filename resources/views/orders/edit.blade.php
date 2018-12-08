@@ -7,7 +7,6 @@
 		Edit Order #{{$order->id}}
 	@endcomponent
 
-
 	<div class="row">
 
 		{{-- LEFT SIDE --}}

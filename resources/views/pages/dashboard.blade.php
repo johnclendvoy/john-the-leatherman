@@ -12,8 +12,8 @@
 			'leather',
 			'categories',
 			'colors',
+			'testimonials',
 			'orders',
-			// 'messages',
 		];
 	@endphp
 

@@ -1,10 +1,13 @@
 @extends('layouts.public')
-
-@section('title', 'Add/Edit Leather Item')
+@section('title')
+	{{empty($leather) ? 'Add' : 'Edit'}} Leather Item
+@stop
 
 @section('content')
 
-	<div class="container">
+	@component('components.title_row')
+	@yield('title')
+	@endcomponent
 
 	@if(empty($leather))
 		<form method="POST" action="/leather" class="form" enctype="multipart/form-data">
@@ -16,12 +19,10 @@
 
 		@include('partials.form_errors')
 
-
 			<div class="form-group">
 				<label>Name</label>
 				<input class="form-control" type="text" name="name" value="{{ !empty($leather) ? $leather->name : old('name') }}">
 			</div>
-
 
 			<div class="form-group">
 				<label>Description</label>
@@ -65,12 +66,7 @@
 				<label>Price</label>
 				<input class="form-control" type="number" name="price" value="{{ !empty($leather) ? $leather->price : old('price') }}">
 			</div>
-
-{{-- 			<div class="form-group">
-				<label>Main Image</label>
-				<input class="form-control" type="file" name="image" accept="image/*">
-			</div>
- --}}
+			
 			<div class="form-group">
 				<input type="hidden" name="available" value="0">
 				<div class="checkbox">
@@ -100,6 +96,4 @@
 			</div>
 			
 		</form>
-
-	</div>
 @stop
