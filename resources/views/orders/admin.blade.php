@@ -7,7 +7,7 @@
 		@slot('route', 'orders')
 		<thead>
 			<th>ID</th>
-			<th>Created</th>
+			<th>Received</th>
 			<th>Name</th>
 			<th>Total</th>
 			<th>Items</th>
@@ -20,9 +20,9 @@
 			@foreach($orders as $order)
 				<tr>
 					<td>{{ $order->id }}</td>
-					<td>{{ $order->created_at }}</td>
+					<td>{{ $order->created_at->format('g:ia M j, Y') }}</td>
 					<td>{{ $order->name }}</td>
-					<td>{{ $order->total_dollars }}</td>
+					<td>${{ $order->total_dollars }}</td>
 					<td>
 						<ul>
 						@foreach($order->leathers as $leather)
@@ -32,8 +32,7 @@
 					</td>
 
 					<td>
-						<span class="badge badge-{{$order->shipped_at ? 'success' : 'danger' }}">{{$order->shipped_at ? 'Yes' : 'No' }}</span>
-
+						<span class="badge badge-{{$order->shipped_at ? 'success' : 'danger' }}">{{$order->shipped_at ? $order->shipped_at->format('M j, y') : 'No' }}</span>
 					</td>
 
 					<td>

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
 use App\Color;
 use App\Leather;
+use App\Category;
 
 class PageController extends Controller
 {

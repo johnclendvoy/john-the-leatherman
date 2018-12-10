@@ -11,7 +11,7 @@ $(document).ready(function(){
 		  	type: "warning",
 		  	showCancelButton: true,
 		  	confirmButtonColor: "#DD6B55",
-		  	confirmButtonText: "yes, delete it!",
+		  	confirmButtonText: "Yes, delete it!",
 		  	closeOnConfirm: false
 		},
 		function(){

@@ -6,7 +6,6 @@ use App\Color;
 use App\Photo;
 use App\Leather;
 use App\Category;	
-
 use Illuminate\Http\Request;
 use App\Http\Requests\LeatherFormRequest;
 

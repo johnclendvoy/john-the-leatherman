@@ -16,7 +16,7 @@
 		</div>
 	</div>
 
-	@component('components.cta-button')
+	@component('components.cta_button')
 		@slot('link', '/leather')
 		@slot('text', 'Back to Product Gallery')
 	@endcomponent

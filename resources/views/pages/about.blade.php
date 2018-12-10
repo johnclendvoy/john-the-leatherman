@@ -85,7 +85,7 @@
 		</div>
 	</div>
 
-	@component('components.cta-button')
+	@component('components.cta_button')
 		@slot('text', 'Browse Products')
 		@slot('link', '/leather')
 	@endcomponent

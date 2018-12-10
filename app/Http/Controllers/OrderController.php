@@ -26,23 +26,20 @@ class OrderController extends Controller
 
 	public function create()
 	{
-		return view('orders.create');
+		return $this->edit(new Order);
 	}
 
 	public function store(Request $request)
 	{
-
-		foreach(Cart::items() as $leather)
-		{
-			if($leather->available != 1)
-			{
+		// check if any items have been purchased be someone else while it was in the cart
+		foreach(Cart::items() as $leather) {
+			if($leather->available != 1) {
 				Cart::remove($leather->id);
 				return redirect('/orders/create')->withErrors(['item_unavailable' => $leather->name. ' was purchased by someone else after it was added to your bag!']);
 			}
 		}
 
-		if(Cart::empty())
-		{
+		if(Cart::empty()) {
 			return redirect('/orders/create')->withErrors(['empty_cart' => 'There is nothing in your cart!']);
 		}
 
@@ -108,7 +105,6 @@ class OrderController extends Controller
 		return view('orders.thank-you');
 	}
 
-
 	public function edit(Order $order)
 	{
 		return view('orders.edit', compact('order'));
@@ -117,17 +113,9 @@ class OrderController extends Controller
 	public function update(OrderFormRequest $request, Order $order)
 	{
 		$order->update($request->all());
-		// if(empty($request->shipped_at)
-		// {
-		// 	$order->shipped_at = null;
-		// }
-		// else
-		// {
-			$order->shipped_at = $request->shipped_at;
-		// }/
+		$order->shipped_at = $request->shipped_at;
 		$order->save();
-		if($request->send_shipped_email)
-		{
+		if($request->send_shipped_email) {
 			Mail::send(new OrderShippedEmail($order));
 		}
 		return redirect('/orders/admin');

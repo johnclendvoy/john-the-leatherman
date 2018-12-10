@@ -45,7 +45,7 @@ class TestimonialController extends Controller
 
 	public function update(TestimonialFormRequest $request, Testimonial $testimonial)
 	{
-		$tesimonial->update($request->all());
+		$testimonial->update($request->all());
 		return redirect('/testimonials/admin');
 	}
 

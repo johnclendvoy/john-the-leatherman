@@ -19,7 +19,7 @@
 
 	@include('partials.leathergrid')
 
-	@component('components.cta-button')
+	@component('components.cta_button')
 		@slot('link', '/leather')
 		@slot('text', 'Shop All Products')
 	@endcomponent
@@ -49,7 +49,7 @@
 		</div>
 	</div>
 
-	@component('components.cta-button')
+	@component('components.cta_button')
 		@slot('link', '/about')
 		@slot('text', 'Learn More')
 	@endcomponent
