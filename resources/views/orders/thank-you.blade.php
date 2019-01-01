@@ -3,7 +3,7 @@
 
 @section('content')
 	@component('components.title_row')
-		Thank you!
+		@slot('title', 'Thank you!')
 		@slot('icon', 'svg.like')
 	@endcomponent
 

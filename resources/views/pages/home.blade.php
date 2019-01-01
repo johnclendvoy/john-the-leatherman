@@ -13,8 +13,7 @@
 @section('content')
 
 	@component('components.title_row')
-		{{$feature_title}}
-		{{-- @slot('icon', 'svg.leather') --}}
+		@slot('title', $feature_title)
 	@endcomponent
 
 	@include('partials.leathergrid')
@@ -25,8 +24,7 @@
 	@endcomponent
 
 	@component('components.title_row')
-		The Process
-		{{-- @slot('icon', 'svg.leather') --}}
+		@slot('title', 'The Process')
 	@endcomponent
 
 	<div class="row">

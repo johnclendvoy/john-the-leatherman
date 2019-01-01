@@ -5,8 +5,8 @@
 @section('content')
 
 	@component('components.title_row')
-	Checkout
-	@slot('icon', 'svg.wallet')
+		@slot('title', 'Checkout')
+		@slot('icon', 'svg.wallet')
 	@endcomponent
 					
 	<div class="row">
@@ -17,35 +17,43 @@
 				<li>{{$leather->name}} : ${{$leather->price}}</li>
 				@endforeach
 			</ul>
-			<p>
+			<div>
 				Subtotal: ${{ Cart::subtotal() }} <br>
 				Tax: ${{ Cart::tax() }}<br>
 				<strong class="h5">Total: ${{ cart::total() }} </strong>
-			</p>
+			</div>
 			<small><a class="text-md-grey" href="/bag"><i class="fa fa-fw fa-chevron-left"></i> Edit Shopping Bag</a></small>
 		</div>
 
 		<div class="col-md-6 col-lg-4 mb30">
-			<h4>Contact Info</h4>
-			<p>
-				<i class="fa fa-fw fa-id-card-o"></i> {{session('customer.name')}}<br>
-				<i class="fa fa-fw fa-envelope-o"></i> {{session('customer.email')}}<br>
-				@if(session('customer.phone'))
-				 <i class="fa fa-fw fa-phone"></i> {{session('customer.phone')}}<br>
-				@endif
-			</p>
+			<div class="row mb30">
+				<div class="col-12">
+					<h4>Contact Info</h4>
+					<div>
+						<i class="fa fa-fw fa-id-card-o"></i> {{session('customer.name')}}<br>
+						<i class="fa fa-fw fa-envelope-o"></i> {{session('customer.email')}}<br>
+						@if(session('customer.phone'))
+						 <i class="fa fa-fw fa-phone"></i> {{session('customer.phone')}}<br>
+						@endif
+					</div>
+				</div>
+			</div>
 
-			<h4>Mailing Address</h4>
-			<p>
-				{{session('customer.address')}}<br>
-				{{session('customer.city')}}<br>
-				{{session('customer.postal_code')}}
-			</p>
+			<div class="row">
+				<div class="col-12">
+					<h4>Mailing Address</h4>
+					<div>
+						{{session('customer.address')}}<br>
+						{{session('customer.city')}}<br>
+						{{session('customer.postal_code')}}
+					</div>
 
-			@if(session('customer.notes'))
-			<p>Notes: {{session('customer.notes')}}</p>
-			@endif
-			<small><a class="text-md-grey" href="/shipping-details"><i class="fa fa-fw fa-chevron-left"></i> Edit Shipping Details</a></small>
+					@if(session('customer.notes'))
+					<div>Notes: {{session('customer.notes')}}</div>
+					@endif
+					<small><a class="text-md-grey" href="/shipping-details"><i class="fa fa-fw fa-chevron-left"></i> Edit Shipping Details</a></small>
+				</div>
+			</div>
 		</div>
 
 		<div class="col-md-12 col-lg-4">

@@ -1,11 +1,12 @@
 @extends('layouts.public')
-
 @section('title', 'All Testimonials')
 
 @section('content')
 
 @component('components.title_row')
-	@yield('title')
+	@slot('title')
+		@yield('title')
+	@endslot
 @endcomponent
 
 <div class="row mt20">

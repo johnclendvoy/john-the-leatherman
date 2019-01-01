@@ -26,7 +26,8 @@ class OrderController extends Controller
 
 	public function create()
 	{
-		return $this->edit(new Order);
+		// not a typical crud method
+		return view('orders.create'); 
 	}
 
 	public function store(Request $request)

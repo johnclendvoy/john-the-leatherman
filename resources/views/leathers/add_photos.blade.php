@@ -3,7 +3,9 @@
 
 @section('content')
 	@component('components.title_row')
-		@yield('title')
+		@slot('title')
+			@yield('title')
+		@endslot
 	@endcomponent
 
 	<div class="row">

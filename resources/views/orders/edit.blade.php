@@ -4,7 +4,9 @@
 @section('content')
 
 	@component('components.title_row')
-		Edit Order #{{$order->id}}
+		@slot('title')
+			Edit Order #{{$order->id}}
+		@endslot
 	@endcomponent
 
 	<div class="row">

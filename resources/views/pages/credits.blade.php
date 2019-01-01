@@ -3,7 +3,7 @@
 
 @section('content')
 	@component('components.title_row')
-		Credits
+		@slot('title', 'Credits')
 		@slot('icon', 'svg.like')
 	@endcomponent
 

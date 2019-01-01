@@ -1,11 +1,17 @@
 <div class="row">
-	<div class="col-xs-12 col-sm-12 text-center">
-		<h1 class="">{{$slot}}
-		@if(!empty($icon))
-			<div class="mt20">
-				@include($icon)
-			</div>
-		@endif
-		</h1>
+	<div class="col-12 text-center">
+		<h1 class="mb20">{{$title}}</h1>
+	</div>
+
+	@if(!empty($icon))
+	<div class="col-12 text-center mb20">
+		<div class="">
+			@include($icon)
+		</div>
+	</div>
+	@endif
+
+	<div class="col-12">
+		{{$slot}}
 	</div>
 </div>

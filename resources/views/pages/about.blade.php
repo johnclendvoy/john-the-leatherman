@@ -4,7 +4,7 @@
 @section('content')
 
 	@component('components.title_row')
-		About John
+		@slot('title', 'About John')
 		@slot('icon', 'svg.avatar')
 	@endcomponent
 
@@ -49,7 +49,7 @@
 	</div>
 
 	@component('components.title_row')
-		The Process
+		@slot('title', 'The Process')
 		{{-- @slot('icon', 'svg.') --}}
 	@endcomponent
 
@@ -59,7 +59,7 @@
 		</div>
 		<div class="col-md-9 text-center text-md-left">
 			<h4 class="mt20">Original Designs</h4>
-			<p class="mt10 text-muted">Every design you see on this site started its life as lead from a pencil. I don't trace patterns from books or online, nor do I copy work from other artists. Using leather as a canvas, I am able to preserve my artwork into something that will last a lifetime.</p>
+			<p class="mt10 text-dk-grey">Every design you see on this site started its life as lead from a pencil. I don't trace patterns from books or online, nor do I copy work from other artists. Using leather as a canvas, I am able to preserve my artwork into something that will last a lifetime.</p>
 		</div>
 
 	</div>
@@ -70,7 +70,7 @@
 		</div>
 		<div class="col-md-9 text-center text-md-left">
 			<h4 class="mt20">Hand Crafted</h4>
-			<p class="mt10 text-muted">After the peice has been designed, the leather is measured and cut to size with a blade, the pattern is then tooled onto the leather by hand. The stain is applied and and edges are hand burnished. The position of every stitch is carefully planned, pre-punched, then placed with care. There are no machines involved in this process.</p>
+			<p class="mt10 text-dk-grey">After the peice has been designed, the leather is measured and cut to size with a blade, the pattern is then tooled onto the leather by hand. The stain is applied and and edges are hand burnished. The position of every stitch is carefully planned, pre-punched, then placed with care. There are no machines involved in this process.</p>
 
 		</div>
 	</div>
@@ -81,7 +81,7 @@
 		</div>
 		<div class="col-md-9 text-center text-md-left">
 			<h4 class="mt20">Unique Products</h4>
-			<p class="mt10 text-muted">Because of the individualized construction process, every piece I make is the first and last of its kind. Even if I tried to replicate a piece, it will always be a little unique in its own way.</p>
+			<p class="mt10 text-dk-grey">Because of the individualized construction process, every piece I make is the first and last of its kind. Even if I tried to replicate a piece, it will always be a little unique in its own way.</p>
 		</div>
 	</div>
 

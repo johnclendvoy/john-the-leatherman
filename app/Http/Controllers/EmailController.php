@@ -12,7 +12,7 @@ class EmailController extends Controller
 	public function contact(ContactFormRequest $request)
 	{
 		Mail::to('johntheleatherman@gmail.com')->send(new ContactFormMail($request->all()));
-		session()->put('sent_email', true);
+		session()->put('sent_message', true);
 		return back();
 	}
 }

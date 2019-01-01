@@ -3,8 +3,8 @@
 @section('content')
 
 	@component('components.title_row')
-	Shopping Bag
-	@slot('icon', 'svg.shopping-bag')
+		@slot('title', 'Shopping Bag')
+		@slot('icon', 'svg.shopping-bag')
 	@endcomponent
 
 	@if(Cart::items()->count())

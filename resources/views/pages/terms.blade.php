@@ -3,7 +3,7 @@
 
 @section('content')
 	@component('components.title_row')
-		Terms and Conditions
+		@slot('title', 'Terms and Conditions')
 		@slot('icon', 'svg.pen')
 	@endcomponent
 

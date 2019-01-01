@@ -4,7 +4,7 @@
 @section('content')
 
 	@component('components.title_row')
-		Contact John
+		@slot('title', 'Contact John')
 		@slot('icon', 'svg.chat')
 	@endcomponent
 
@@ -19,16 +19,6 @@
 			<form method="POST" action="/contact">
 				{{ csrf_field() }}
 				{!! app('captcha')->render() !!}
-
-
-				@if(session()->pull('sent_email'))
-					{{-- {{session()->forget('sent_email')}} --}}
-					<div class="row form-group alert alert-success">
-						<div class="col-sm-12">
-							<p>Thank you for your message! I will get back to you as soon as I can.</p>
-						</div>
-					</div>
-				@endif
 
 				@include('partials.form_errors')
 
@@ -58,7 +48,7 @@
 	</div>
 
 	@component('components.title_row')
-		Let's Get Social
+		@slot('title', "Let's Get Social")
 		@slot('icon', 'svg.nodes')
 	@endcomponent
 

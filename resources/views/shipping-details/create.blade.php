@@ -5,7 +5,7 @@
 
 	<div id="contact" class="container">
 		@component('components.title_row')
-			Shipping Details
+			@slot('title', 'Shipping Details')
 			@slot('icon', 'svg.package')
 		@endcomponent
 

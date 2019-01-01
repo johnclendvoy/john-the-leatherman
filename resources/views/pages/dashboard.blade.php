@@ -4,7 +4,7 @@
 @section('content')
 
 	@component('components.title_row')
-		Admin Dashboard
+		@slot('title', 'Admin Dashboard')
 	@endcomponent
 
 	@php

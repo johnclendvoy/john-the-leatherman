@@ -1,5 +1,7 @@
 @component('components.title_row')
-	@yield('title')
+	@slot('title')
+		@yield('title')
+	@endslot
 @endcomponent
 
 @if(empty($id))

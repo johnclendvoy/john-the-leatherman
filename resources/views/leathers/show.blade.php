@@ -7,7 +7,7 @@
 @section('content')
 
 	@component('components.title_row')
-		{{$leather->name}}
+		@slot('title', $leather->name)
 		@slot('icon', 'svg.leather')
 	@endcomponent
 

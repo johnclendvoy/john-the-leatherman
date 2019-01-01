@@ -6,7 +6,10 @@ Route::view('/terms', 'pages.terms');
 Route::view('/credits', 'pages.credits');
 Route::view('/about', 'pages.about');
 Route::view('/contact', 'pages.contact');
+
+// Public Forms
 Route::post('/contact', 'EmailController@contact');
+Route::post('/suggestions', 'suggestionController@store');
 
 // Checkout Process
 Route::post('/bag', 'CartController@store'); // add an item to the cart
