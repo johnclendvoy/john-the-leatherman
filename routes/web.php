@@ -9,7 +9,7 @@ Route::view('/contact', 'pages.contact');
 
 // Public Forms
 Route::post('/contact', 'EmailController@contact');
-Route::post('/suggestions', 'suggestionController@store');
+Route::post('/suggestions',  'SuggestionController@store');
 
 // Checkout Process
 Route::post('/bag', 'CartController@store'); // add an item to the cart
