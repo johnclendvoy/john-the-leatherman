@@ -18,7 +18,7 @@
 	<meta name="theme-color" content="#ffffff">
 		
 	<!-- fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Raleway|Roboto:400,900+Slab" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway|Roboto:300,400" rel="stylesheet">
 
 	<!-- bootstrap -->
 	<link href="/plugins/bootstrap-4.0.0-beta.2-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">

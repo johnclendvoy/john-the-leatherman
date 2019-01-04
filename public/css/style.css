@@ -1,17 +1,20 @@
 /* Style sheet for JohnTheLeatherman.com */
 
 :root {
-	--white: #fefefa;
-	--offwhite: #eeeeea;
+	--white: hsl(60, 67%, 99%);
+	--offwhite:	hsl(60, 9%, 94%);
 
-	--lt-grey: #cececa;
-	--md-grey: #aeaeaa;
-	--dk-grey: #7e7e7a;
-	--black: #3e3e3a;
+	--lt-grey: hsl(60, 3%, 80%);
+	--md-grey: hsl(60, 3%, 65%);
+	--dk-grey: hsl(60, 3%, 50%);
 
-	--lt-green: #a3b16c;
-	--md-green: #91a055;
-	--dk-green: #4c542c;
+	--lt-black: hsl(60, 3%, 40%);
+	--md-black: hsl(60, 3%, 34%);
+	--dk-black: hsl(60, 3%, 22%);
+
+	--lt-green: hsl(72, 36%, 60%);
+	--md-green: hsl(72, 36%, 44%);
+	--dk-green: hsl(72, 36%, 25%);
 
 	--lt-alert-success: hsl(145, 61%, 80%);
 	--md-alert-success: hsl(145, 61%, 30%);
@@ -21,19 +24,15 @@
 	--md-alert-danger: hsl(355, 61%, 30%);
 	--lg-alert-danger: hsl(355, 61%, 15%);
 
-	--lt-blue: #8fd5d3;
-	--md-blue: #68acaa;
-	--dk-blue: #2d4244;
-
 	--footer-height: 100px;
 	--bb-width: 2px;
 }
 
 
 html, body {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Raleway',sans-serif;
 	background-color: var(--offwhite);
-	color: var(--black);
+	color: var(--dk-black);
 	text-transform:uppercase;
 	font-size: 16px;
 	margin: 0;
@@ -42,15 +41,16 @@ html, body {
 }
 
 p {
-	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+	font-family: 'Roboto','Helvetica Neue',sans-serif;
 	text-transform: none;
 	line-height: 1.8em;
 	font-size: 1.1em;
-	color: var(--dk-grey);
+	color: var(--md-black);
+	font-weight:300;
 }
 
 a {
-	color: var(--black);
+	color: var(--dk-black);
 	-webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
 }
@@ -184,7 +184,7 @@ div.popup {
 }
 
 div.leather-item:hover > div.popup {
-	color: var(--black);
+	color: var(--dk-black);
 	max-height: 100%;
 	padding:15px 0px;
 }
@@ -306,7 +306,7 @@ textarea.form-control {
 
 /* Custom for Slick Slider */
 .slick-prev:before {
-	color: var(--black);
+	color: var(--dk-black);
 	content:"<";
 	font-weight: bold;
 }
@@ -382,10 +382,10 @@ div.row.checkout {
 }
 
 .text-md-grey {
-	color: var(--md-grey) !important;
+	color: var(--lt-black) !important;
 }
 .text-dk-grey {
-	color: var(--dk-grey) !important;
+	color: var(--md-black) !important;
 }
 .cursor-pointer {
 	cursor:pointer;
