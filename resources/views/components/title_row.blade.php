@@ -4,7 +4,7 @@
 	</div>
 
 	@if(!empty($icon))
-	<div class="col-12 text-center mb20">
+	<div class="col-12 text-center mb30">
 		<div class="">
 			@include($icon)
 		</div>

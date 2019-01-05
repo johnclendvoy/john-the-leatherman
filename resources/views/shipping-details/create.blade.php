@@ -69,6 +69,7 @@
 							<textarea name="notes" class="form-control rect" >{{ old('notes', session('customer.notes')) }}</textarea>
 						</div>
 					</div>
+					
 					<div class="row form-group">
 						<div class="col-sm-12 text-center">
 							<button name="send" type="submit" class="btn btn-primary square">Continue Checkout</button>
