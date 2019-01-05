@@ -82,19 +82,24 @@
 				</div>
 				
 				<div class="row">
-					<div class="form-group col-sm-6 {{ $errors->has('city') ? 'has-error' : '' }}">
+					<div class="form-group col-sm-8 {{ $errors->has('city') ? 'has-error' : '' }}">
 						<label>City</label>
 						<input required name="city" type="text" class="form-control" value="{{ old('city', $order->city) }}">
 					</div>
+
+					<div class="form-group col-sm-4 {{ $errors->has('province') ? 'has-error' : '' }}">
+						<label>Province</label>
+						<input required name="province" type="text" class="form-control" value="{{ old('province', $order->province) }}">
+					</div>
+				</div>
+
+				<div class="row">
 
 					<div class="form-group col-sm-6 {{ $errors->has('postal_code') ? 'has-error' : '' }}">
 						<label>Postal Code / Zip Code</label>
 						<input required name="postal_code" type="text" class="form-control" value="{{ old('postal_code', $order->postal_code) }}">
 					</div>
-				</div>
-
-				<div class="row form-group">
-					<div class="col-sm-12 {{ $errors->has('phone') ? 'has-error' : '' }}">
+					<div class="form-group col-sm-6 {{ $errors->has('phone') ? 'has-error' : '' }}">
 						<label>Phone Number <span class="text-muted">(optional)</span></label>
 						<input name="phone" type="text" class="form-control" value="{{ old('phone', $order->phone) }}">
 					</div>

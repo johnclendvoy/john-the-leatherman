@@ -25,7 +25,7 @@
 </p>
 <p>
 	{{$order->address}}<br>
-	{{$order->city}}<br>
+	{{$order->city}}, {{$order->province}}<br>
 	{{$order->postal_code}}
 </p>
 <p>{{$order->notes ?? 'no special notes'}}</p>

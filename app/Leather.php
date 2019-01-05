@@ -54,6 +54,11 @@ class Leather extends Model
 		return in_array($this->id, session('cart'));
 	}
 
+	public function getDollarsAttribute()
+	{
+		return number_format($this->price, 2);
+	}
+
 	// return the number of photos there are in the slider, if there are 3 or more, return 3
 	public function getSliderClassAttribute()
 	{
@@ -72,6 +77,11 @@ class Leather extends Model
 	}
 
 	// HELPERS
+
+	public function swatch()
+	{
+		return $this->color->swatch();
+	}
 
 
 	// return a collection of $num leather items that are in the same category or the same color as the current leather item

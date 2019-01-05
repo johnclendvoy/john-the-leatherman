@@ -19,7 +19,7 @@
 <p>
 	{{$order->name}}<br>
 	{{$order->address}}<br>
-	{{$order->city}}<br>
+	{{$order->city}}, {{$order->province}}<br>
 	{{$order->postal_code}}
 </p>
 <p>I will send you another email to let you know that your order was sent in the mail. If any of this information is incorrect, or if you have any questions, please contact me as soon as possible at <a href="mailto:{{config('app.email')}}">{{config('app.email')}}</a> or <a href="{{url('/contact')}}">{{url('/contact')}}</a>.</p>

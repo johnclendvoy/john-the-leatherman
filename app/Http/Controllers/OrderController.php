@@ -74,6 +74,7 @@ class OrderController extends Controller
 				'address' => session('customer.address'),
 				'city' => session('customer.city'),
 				'postal_code' => session('customer.postal_code'),
+				'province' => session('customer.province'),
 				'phone' => session('customer.phone'),
 				'notes' => session('customer.notes'),
 				'stripe_fee' => $stripe_fee,

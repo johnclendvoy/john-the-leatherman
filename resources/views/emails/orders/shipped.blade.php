@@ -13,7 +13,7 @@
 <p>
 {{$order->name}}<br>
 {{$order->address}}<br>
-{{$order->city}}<br>
+{{$order->city}}, {{$order->province }}<br>
 {{$order->postal_code}}
 </p>
 

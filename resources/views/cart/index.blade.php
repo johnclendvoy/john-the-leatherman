@@ -16,17 +16,17 @@
 		<div class=" col-sm-12 col-md-6 col-lg-8">
 			@forelse(Cart::items() as $leather)
 			<div id="cart-item-{{$leather->id}}" class="container">
-				<div class="row mb30 border-bottom checkout-item">
-					<div class="col-md-4 col-sm-6 pl0">
+				<div class="row mb30 box">
+					<div class="col-3 col-sm-6 col-md-4 pl0">
 						<a href="{{$leather->url}}">
 							<img class="img img-fluid" src="{{$leather->image('thumbnail')}}" alt="{{$leather->name}}">
 						</a>
 					</div>
-					<div class="col-md-8 col-sm-6 mt20 mb20">
-						<h3>{{$leather->name}} </h3>
-						<h4>${{$leather->price}}</h4>
+					<div class="col-9 col-sm-6 col-md-8 mt20 mb20">
+						<h4>{{$leather->name}} </h4>
+						<h5 class="dollar">${{$leather->price}}</h5>
 						<p>
-							<span class="color-swatch" style="background-color:{{ $leather->color->hexcode }}"></span> {{$leather->color->name}}
+							{!! $leather->swatch() !!} {{$leather->color->name}}
 						</p>
 						<form id="remove-from-cart-form" action="/bag" method="post">
 							{{csrf_field()}}
@@ -51,15 +51,15 @@
 		@if(Cart::items()->count())
 			<div class="col-sm-12 col-md-6 col-lg-4">
 				<div class="container">
-					<div class="row border-bottom checkout">
-						<div class="col-sm-12">
-							{{-- <h2>Checkout</h2> --}}
-							<p>Subtotal: <span class="pull-right">${{ Cart::subtotal() }}</span></p>
-							<p>Tax: <span class="pull-right">${{ Cart::tax() }}</span></p>
-							<h4>Total: <span class="pull-right">${{ Cart::total() }}</span></h4>
+					<div class="row box">
+						<div class="col-sm-12 mb20">
+							<div class="mb10">Subtotal <span class="dollar pull-right">${{ Cart::subtotal() }}</span></div>
+							<div class="mb10">Tax<span class="dollar pull-right">${{ Cart::tax() }}</span></div>
+							<hr>
+							<h4>Total <span class="dollar pull-right">${{ Cart::total() }}</span></h4>
 						</div>
 
-						<div class="col-sm-12 text-center mt20">
+						<div class="col-sm-12 text-center">
 							<a href="/shipping-details" class="btn btn-primary square">Checkout</a><br>
 							<img src="/images/stripe/powered_by_stripe_solid.png">
 						</div>

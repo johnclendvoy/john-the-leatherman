@@ -12,4 +12,8 @@ class Color extends Model
     {
     	return $this->hasMany('App\Leather', 'color_id')->where('active', 1)->orderBy('id', 'desc');
     }
+    public function swatch()
+    {
+   		return '<span class="color-swatch" style="background-color:' . $this->hexcode . '"></span>';
+    }
 }

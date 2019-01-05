@@ -29,7 +29,16 @@ class OrderFormRequest extends FormRequest
             'address' => 'required',
             'city' => 'required',
             'postal_code' => 'required',
+            'province' => 'required',
             'shipped_at' => 'required_with:send_shipped_email|date_format:Y-m-d|nullable',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'province.required' => 'The province / state field is required.',
+            'postal_code.required' => 'The postal code / zip code field is required.'
         ];
     }
 }
