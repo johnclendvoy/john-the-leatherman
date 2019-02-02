@@ -12,20 +12,20 @@
 	<div class="row">
 
 		{{-- LEFT SIDE --}}
-		<div class="col-sm-12 col-md-4">
+		<div class="col-sm-12 col-md-6 mb30">
 			<p>Created {{$order->created_at->format('g:iA, F jS, Y')}}<br>
 				<small class="text-muted">{{ $order->created_at->diffForHumans()}} </small>
 			</p>
 
 			@foreach($order->leathers as $leather)
 			<div id="cart-item-{{$leather->id}}" class="container">
-				<div class="row mb30 border-bottom checkout-item">
-					<div class="col-md-4 col-sm-6 pl0">
+				<div class="row mb30 box border-bottom checkout-item">
+					<div class="col-sm-6 col-md-12 col-lg-6">
 						<a href="{{$leather->url}}">
 							<img class="img img-fluid" src="{{$leather->image('thumbnail')}}" alt="{{$leather->name}}">
 						</a>
 					</div>
-					<div class="col-md-8 col-sm-6 mt20 mb20">
+					<div class="col-sm-6 col-md-12 col-lg-6 mt20 mb20">
 						<h4>{{$leather->name}} </h4>
 						<h5>${{$leather->price}}<span class=" badge badge-secondary pull-right">#{{$leather->id}}</span></h5>
 						<p>
@@ -37,7 +37,7 @@
 			@endforeach
 
 			<div class="container">
-				<div class="row border-bottom checkout">
+				<div class="row box border-bottom checkout">
 					<div class="col-sm-12">
 						{{-- <h2>Checkout</h2> --}}
 						<p>Subtotal: <span class="pull-right">${{ $order->subtotal_dollars }}</span></p>
@@ -46,17 +46,12 @@
 
 						<small>Stripe ID: <span class="pull-right">${{ $order->stripe_id }}</span></small>
 					</div>
-
-					{{-- <div class="col-sm-12 text-center mt20"> --}}
-						{{-- <a href="/shipping-details" class="btn btn-primary square">Checkout</a><br> --}}
-						{{-- <img src="/images/stripe/powered_by_stripe_solid.png"> --}}
-					{{-- </div> --}}
 				</div>
 			</div>
 		</div>
 		
 		{{-- RIGHT SIDE --}}
-		<div class="col-sm-12 col-md-8">
+		<div class="col-sm-12 col-md-6">
 			
 			<form method="POST" action="/orders/{{$order->id}}">
 				{{method_field('PATCH')}}
@@ -117,6 +112,9 @@
 						<label>Shipped At </label>
 						<input class="form-control rect" type="date" name="shipped_at" value="@if(old('shipped_at')){{old('shipped_at')}}@elseif($order->shipped_at){{$order->shipped_at->format('Y-m-d')}}@endif">
 					</div>
+				</div>
+
+				<div class="row form-group">
 
 					<div class="col-sm-12 {{ $errors->has('send_shipped_email') ? 'has-error' : '' }}">
 						<label>

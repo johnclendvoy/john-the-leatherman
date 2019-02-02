@@ -13,23 +13,26 @@ class Order extends Model
 
 	public function getUrlAttribute()
 	{
-		return url('orders/'.$this->id);
+		return url('orders/'.$this->id.'/edit');
 	}
-
 
 	public function getSubtotalDollarsAttribute()
 	{
 		return number_format(($this->total - $this->tax) / 100, 2);
 	}
+
 	public function getTaxDollarsAttribute()
 	{
 		return number_format($this->tax / 100, 2);
 	}
+
 	public function getTotalDollarsAttribute()
 	{
 		return number_format($this->total / 100, 2);
 	}
 
+	// RELATIONSHIPS
+	
 	public function leathers()
 	{
 		return $this->hasMany('App\Leather');
