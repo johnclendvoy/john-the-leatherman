@@ -111,6 +111,9 @@ class Leather extends Model
 		return $matches->take($num);
 	}
 
+	/**
+	* @param $size can be 'thumbnail_small', 'thumbnail', 'feature'
+	*/
 	public function image($size)
 	{
 		$path = '/uploads/images/leathers/'. $size . '/';

@@ -16,7 +16,7 @@
 		@slot('title', $feature_title)
 	@endcomponent
 
-	@include('partials.leathergrid')
+	@include('partials.leathergrid', ['leathers' => $leathers])
 
 	@component('components.cta_button')
 		@slot('link', '/leather')
@@ -51,5 +51,34 @@
 		@slot('link', '/about')
 		@slot('text', 'Learn More')
 	@endcomponent
+
+	@unless(empty($testimonials))
+
+		@component('components.title_row')
+			@slot('title', 'Testimonials')
+			@slot('icon', 'svg.heart-bubble')
+		@endcomponent
+
+		<div class="row">
+			<div class="col-12 text-center">
+			@foreach($testimonials as $testimonial)
+			<div class="row box mb30">
+				<div class="col-12 mb20">
+					<p class="text-dk-grey">"{{$testimonial->body}}"</p>
+				</div>
+				<div class="col-6 text-right">
+					<a href="{{$testimonial->leather->url}}">
+						<img class="img img-fluid rounded-circle" src="{{$testimonial->leather->image('thumbnail_small')}}">
+					</a>
+				</div>
+				<div class="col-6 text-left">
+					<h5 class="mt10">{{$testimonial->name}}</h5>
+					<p>Owner of <a href="{{$testimonial->leather->url}}"> {{$testimonial->leather->name}}</a></p>
+				</div>
+			</div>
+			@endforeach
+			</div>
+		</div>
+	@endunless
 	
 @stop
