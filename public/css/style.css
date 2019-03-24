@@ -244,7 +244,7 @@ address.address {
 	text-transform: uppercase;
 	padding: 15px 20px;
 	background-color: var(--white);
-	color:var(--black);
+	color:var(--dk-black);
 
 	border:none;
 	border-bottom: var(--bb-width) solid var(--md-grey);
@@ -257,7 +257,7 @@ address.address {
 
 .btn.btn-secondary.square.active{
 	background-color:var(--lt-grey);
-	color:var(--black);
+	color:var(--dk-black);
 
 	border:none;
 	border-bottom:var(--bb-width) solid var(--md-grey);
@@ -267,7 +267,7 @@ address.address {
 .btn.btn-secondary.square:hover{
 	background-color:var(--lt-grey);
 	background-color:var(--md-green);
-	color:var(--black);
+	color:var(--dk-black);
 }
 
 /* PRIMARY BUTTON (Green) */
@@ -338,7 +338,7 @@ input.form-control, textarea.form-control {
 	font-weight: bold;
 }
 .slick-next:before {
-	color: var(--black);
+	color: var(--dk-black);
 	content:">";
 	font-weight: bold;
 }
