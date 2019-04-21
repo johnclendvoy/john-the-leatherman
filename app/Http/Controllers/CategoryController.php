@@ -31,14 +31,14 @@ class CategoryController extends Controller
 
 	public function store(CategoryFormRequest $request)
 	{
-		array_add($request, 'slug', str_slug($request->name));
+		Arr:add($request, 'slug', str_slug($request->name));
 		Category::create($request->all());
 		return redirect('/categories/admin');
 	}
 
 	public function update(CategoryFormRequest $request, Category $category)
 	{
-		array_add($request, 'slug', str_slug($request->name));
+		Arr:add($request, 'slug', str_slug($request->name));
 		$category->update($request->all());
 		return redirect('/categories/admin');
 	}

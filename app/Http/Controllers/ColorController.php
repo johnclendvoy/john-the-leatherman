@@ -31,14 +31,14 @@ class ColorController extends Controller
 
 	public function store(ColorFormRequest $request)
 	{
-		array_add($request, 'slug', str_slug($request->name));
+		Arr::add($request, 'slug', str_slug($request->name));
 		Color::create($request->all());
 		return redirect('/colors/admin');
 	}
 
 	public function update(ColorFormRequest $request, Color $color)
 	{
-		array_add($request, 'slug', str_slug($request->name));
+		Arr::add($request, 'slug', str_slug($request->name));
 		$color->update($request->all());
 		return redirect('/colors/admin');
 	}
