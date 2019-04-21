@@ -16,8 +16,8 @@
 
 			{{-- large photo --}}
 			<div class="row">
-				<div class="col-sm-12">
-					<div class="slider-for-{{ $leather->slider_class }}">
+				<div class="col-12">
+					<div id="large-slider" class="slider-for-{{ $leather->slider_class }}">
 						@if(!empty($leather->featurePhoto))
 						<div>
 							<a data-fancybox="gallery" class="cursor-zoom-in" href="{{ $leather->image('full') }}">
@@ -42,7 +42,7 @@
 			{{-- small photos --}}
 			@if(count($leather->photos))
 				<div class="row">
-					<div class="col-10 offset-1">
+					<div class="col-12">
 						<div class="slider-nav-{{ $leather->slider_class }}">
 
 							{{-- show the feature image first --}}
