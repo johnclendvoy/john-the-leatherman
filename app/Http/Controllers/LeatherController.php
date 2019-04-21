@@ -29,26 +29,27 @@ class LeatherController extends Controller
 	public function index(Request $request)
 	{
 		// to show in dropdowns
-		$categories = Category::whereHas('leathers')->get();
-		$colors = Color::whereHas('leathers')->get();
+		$categories = Category::all();
+		$colors = Color::all();
+		// $categories = Category::whereHas('leathers')->get();
+		// $colors = Color::whereHas('leathers')->get();
 
-		$leathers = Leather::active()->get()->sortByDesc('available');
+		$leathers = Leather::active()->orderBy('available', 'desc')->get();
 
 		// current selections
-		$category = []; //all
-		$color = []; //all
+		$category = null; //all
+		$color = null; //all
 		$available = null;
-		$leather = null;
 
 		// filtering based on leather nav selections
 		if(!empty($request->category))
 		{
-			$category = Category::where('slug', $request->category)->get()->first();
+			$category = Category::where('slug', $request->category)->first();
 			$leathers = $leathers->where('category_id', $category->id);
 		}
 		if(!empty($request->color))
 		{
-			$color = Color::where('slug', $request->color)->get()->first();
+			$color = Color::where('slug', $request->color)->first();
 			$leathers = $leathers->where('color_id', $color->id);
 		}
 		if(!empty($request->available))
@@ -58,7 +59,7 @@ class LeatherController extends Controller
 			$leathers = $leathers->where('available', $is_available);
 		}
 
-		return view('leathers.index', compact('categories', 'colors', 'leathers', 'category', 'color', 'available', 'leather'));
+		return view('leathers.index', compact('categories', 'colors', 'leathers', 'category', 'color', 'available'));
 	}
 
 	// Show a specific leather item
