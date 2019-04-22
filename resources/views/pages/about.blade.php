@@ -31,7 +31,7 @@
 		<div class="col-sm-12 col-md-8 offset-md-2">
 			<div class="row">
 				@foreach($pics as $p)
-					<div class="col-12 col-md-4">
+					<div class="col-12 col-md-4 mb20">
 						<a data-fancybox="gallery" href="{{$p['link']}}">
 							<img class="img img-fluid" src="{{$p['link']}}" title="{{$p['desc']}}" alt="{{$p['desc']}}"/>
 						</a>
