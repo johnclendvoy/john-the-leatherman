@@ -39,27 +39,24 @@
 
 				<div class="row">
 					<div class="col-md-4 text-center mt20">
-						{{-- @include('svg.design', ['height' => '100px']) --}}
 						<div class="px-5">
-							<img class="img img-fluid rounded-circle" src="/images/process/sketched_crawdad.png">
+							<img class="img img-fluid rounded-circle" src="/images/process/crawdad_sketched.png" alt="a pencil sketch of a crawdad on paper">
 						</div>
 						<h4 class="mt20">Original Designs</h4>
 						<p class="mt10 text-dk-grey">Each design begins its life as an original sketch.</p>
 					</div>
 
 					<div class="col-md-4 text-center mt20">
-						{{-- @include('svg.handmade', ['height' => '100px']) --}}
 						<div class="px-5">
-							<img class="img img-fluid rounded-circle" src="/images/process/tooled_crawdad.png">
+							<img class="img img-fluid rounded-circle" src="/images/process/crawdad_tooled.png" alt="a crawdad tooled into leather">
 						</div>
 						<h4 class="mt20">Hand Crafted</h4>
 						<p class="mt10 text-dk-grey">My work is made with care using only hand tools.</p>
 					</div>
 
 					<div class="col-md-4 text-center mt20">
-						{{-- @include('svg.unique', ['height' => '100px']) --}}
 						<div class="px-5">
-							<img class="img img-fluid rounded-circle" src="/images/process/finished_crawdad.png">
+							<img class="img img-fluid rounded-circle" src="/images/process/crawdad_finished.png" alt="a white painted crawdad on a black leather banjo strap">
 						</div>
 						<h4 class="mt20">Unique Products</h4>
 						 <p class="mt10 text-dk-grey">Every thing I make is one-of-a-kind.</p>

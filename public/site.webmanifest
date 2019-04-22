@@ -10,6 +10,5 @@
     ],
     "theme_color": "#a3b16c",
     "background_color": "#a3b16c",
-    "start_url": "http://johntheleatherman.com",
     "display": "standalone"
 }
