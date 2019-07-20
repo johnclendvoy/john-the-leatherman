@@ -37,6 +37,6 @@ class PageController extends Controller
 	*/
 	public function dashboard() 
 	{
-		return view('pages.dashboard', compact('objects'));
+		return view('pages.dashboard');
 	}
 }
