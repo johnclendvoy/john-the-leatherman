@@ -4,7 +4,7 @@
 <div class="d-none d-md-block home-banner text-center">
 	<div class="home-banner-text">
 		<div class="home-title">John</div>
-		<div class="home-subtitle">- The -</div>
+		<div class="home-subtitle">The</div>
 		<div class="home-title">Leatherman</div>
 	</div>
 </div>

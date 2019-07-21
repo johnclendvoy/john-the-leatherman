@@ -168,6 +168,14 @@ div.leather-item {
 	margin-bottom:15px;
 }
 
+div.leather-price {
+	position:absolute;
+	top:5px;
+	right:20px;
+	color: var(--black);
+	font-weight: bold;
+}
+
 div.popup {
 	background-color: var(--white);
 	position:absolute;
