@@ -21,7 +21,7 @@ class LeatherController extends Controller
 	// List of all leather items
 	public function admin()
 	{
-		$leathers = Leather::all();
+		$leathers = Leather::orderBy('id', 'desc')->get();
 		return view('leathers.admin', compact( 'leathers'));
 	}
 
