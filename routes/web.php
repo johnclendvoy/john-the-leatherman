@@ -30,7 +30,7 @@ Route::get('/categories/admin', 'CategoryController@admin');
 Route::resource('categories', 'CategoryController');
 
 // Colors
-Route::get('colors/admin', 'ColorController@admin');
+Route::get('/colors/admin', 'ColorController@admin');
 Route::resource('colors', 'ColorController');
 
 // Leather

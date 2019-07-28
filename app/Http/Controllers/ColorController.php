@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Arr;
 use App\Color;
 use Illuminate\Http\Request;
 use App\Http\Requests\ColorFormRequest;
