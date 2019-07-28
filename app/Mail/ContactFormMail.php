@@ -30,8 +30,8 @@ class ContactFormMail extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.contact');
+        return $this->view('emails.contact')
             ->subject('Contact Form Filled Out on johntheleatherman.com')
-            ->from('noreply@johntheleatherman.com')
+            ->from('noreply@johntheleatherman.com');
     }
 }
