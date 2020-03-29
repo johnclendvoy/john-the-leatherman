@@ -24,7 +24,7 @@
 	--md-alert-danger: hsl(355, 61%, 30%);
 	--lg-alert-danger: hsl(355, 61%, 15%);
 
-	--footer-height: 100px;
+	--footer-height: 150px;
 	--bb-width: 2px;
 
 	--font-1: 'Raleway',sans-serif;
@@ -67,9 +67,6 @@ a:hover {
 	text-decoration: none;
 }
 
-h1, h2, h2, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-}
-
 h1 , .h1{
 	margin-top:40px;
 	margin-bottom:40px;
@@ -94,6 +91,15 @@ h1 , .h1{
 span.social a{
 	margin-right:12px;
 	font-size:16px;
+}
+
+.jcl-link:hover .jcl-logo {
+	fill: var(--md-green);
+}
+.jcl-logo {
+	fill: var(--md-black);
+	-webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
 }
 
 /* Needed for footer to stay in place */
