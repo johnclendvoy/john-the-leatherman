@@ -28,7 +28,7 @@
 	@endphp
 
 	<div class="row mt40">
-		<div class="col-sm-12 col-md-8 offset-md-2">
+		<div class="col-sm-12 col-lg-8 offset-lg-2">
 			<div class="row">
 				@foreach($pics as $p)
 					<div class="col-12 col-md-4 mb20">
@@ -42,7 +42,7 @@
 	</div>
 
 	<div class="row mt40 text-center">
-		<div class="col-sm-12 col-md-8 offset-md-2">
+		<div class="col-sm-12 col-lg-8 offset-lg-2">
 			<div class="embed-responsive embed-responsive-16by9">
 				<iframe class="embed-responsive-item" src="//www.youtube.com/embed/hh_Cv2wHVzo"></iframe>
 			</div>

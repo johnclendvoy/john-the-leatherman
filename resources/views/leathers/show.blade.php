@@ -85,23 +85,9 @@
 
 			@include('partials.buy-now-button')
 
-
-{{-- 			@auth
-			<a class="btn btn-secondary square" href="/leather/{{$leather->id}}/edit"><i class="fa fa-pencil"></i></a>
-			<a class="btn btn-secondary square" href="/leather/{{$leather->id}}/add-photos"><i class="fa fa-camera"></i></a>
-			@endauth
- --}}
 		</div>
 	</div>
 
-
-	<div class="row text-center">
-		<div class="col-sm-12">
-			<h4>
-			</h4>
-		</div>
-
-	</div>
 
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 text-center">

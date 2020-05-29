@@ -29,7 +29,9 @@ class PageController extends Controller
 		$wallet_category = Category::where('slug', 'wallets')->first();
 		$leathers = Leather::where('active', 1)->where('available', 1)->where('category_id', $wallet_category->id)->inRandomOrder()->get()->take(4);
 
-		return view('pages.home', compact('leathers', 'feature_title', 'testimonials'));
+		$new_creations = Leather::where('active', 1)->orderBy('created_at', 'DESC')->get()->take(4);
+
+		return view('pages.home', compact('leathers','new_creations', 'feature_title', 'testimonials'));
 	}
 
 	/** 

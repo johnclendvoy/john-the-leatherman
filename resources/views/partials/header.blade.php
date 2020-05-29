@@ -1,10 +1,10 @@
 <header>
 	<div class="title-bar border-bottom">
 		<div class="row">
-			<div class="col-md-5 col-sm-12 text-center text-md-left">
+			<div class="col-12 col-md-6 text-center text-md-left">
 				<a href="/" class="h2">John The Leatherman</a>
 			</div>
-			<div class="col-md-7 col-sm-12 text-center text-md-right title-bar-right">
+			<div class="col-12 col-md-6 text-center text-md-right title-bar-right">
 				@if(Auth::check())
 					<a href="/admin">Admin</a>
 				@endif

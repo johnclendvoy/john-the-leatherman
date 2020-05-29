@@ -10,11 +10,11 @@
 
 	<div class="row">
 
-		<div class="col-sm-12 col-md-6">
+		<div class="col-sm-12 col-lg-6">
 			<p>Do you have any questions or comments about my work? Would like to request a custom leather item? Are you having issues with the website? Let me know by filling out this form.</p>
 		</div>
 
-		<div class="col-sm-12 col-md-6">
+		<div class="col-sm-12 col-lg-6">
 		
 			<form method="POST" action="/contact">
 				{{ csrf_field() }}

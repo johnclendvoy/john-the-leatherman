@@ -6,7 +6,7 @@
 				<input type="hidden" name="leather_id" value="{{$leather->id}}">
 				<span class="h1 price">${{$leather->price}}</span>
 
-				<button class="btn btn-secondary btn-lg square">
+				<button class="btn btn-primary btn-lg square">
 				@if(Cart::contains($leather->id))
 					Remove from Bag
 				@else
