@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Arr;
 use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\CategoryFormRequest;
@@ -31,14 +32,14 @@ class CategoryController extends Controller
 
 	public function store(CategoryFormRequest $request)
 	{
-		Arr:add($request, 'slug', str_slug($request->name));
+		Arr::add($request, 'slug', str_slug($request->name));
 		Category::create($request->all());
 		return redirect('/categories/admin');
 	}
 
 	public function update(CategoryFormRequest $request, Category $category)
 	{
-		Arr:add($request, 'slug', str_slug($request->name));
+		Arr::add($request, 'slug', str_slug($request->name));
 		$category->update($request->all());
 		return redirect('/categories/admin');
 	}
