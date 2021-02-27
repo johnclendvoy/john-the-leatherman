@@ -23,7 +23,7 @@
 				</div>
 
 				<div class="col-sm-4 col-xs-12 text-center text-sm-right">
-					<a class="jcl-link" href="//johnclendvoy.ca" title="John C. Lendvoy Software Development">
+					<a class="jcl-link" href="//jcl-software.com" title="John C. Lendvoy Software Development">
 						<div class="small">Website By</div>
 						<svg height="24px" viewBox="0 0 240 90" class="jcl-logo" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
 							<polygon points="50,0 90,0 100,17.32 60,86.6 0,86.6 10.00,69.28 0,51.96 20,51.96 30,69.28 60,17.32"/>
