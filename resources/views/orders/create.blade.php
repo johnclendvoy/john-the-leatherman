@@ -90,7 +90,7 @@
 							@include('partials.form_errors')
 
 						  	<div class="text-center">
-							  	<script
+							  	{{-- <script
 								    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 								    data-key="{{config('services.stripe.key')}}"
 								    data-amount="{{Cart::total_cents()}}"
@@ -100,12 +100,14 @@
 								    data-image="/apple-touch-icon-180x180.png"
 								    data-locale="auto"
 								    data-zip-code="false">
-							  	</script>
+							  	</script> --}}
 							    <script>
 							        // Hide default stripe button
-							        document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
+							        // document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
 							    </script>
-								<button type="submit" class="btn btn-primary square">Pay With Card</button>
+								{{-- <button type="submit" class="btn btn-primary square" disabled>Pay With Card</button> --}}
+								<button type="submit" class="btn btn-primary square" disabled>Unavailable</button>
+                                <p>Please contact me via email to place an order.</p>
 								<div>
 						  			<img src="/images/stripe/powered_by_stripe_solid.png">
 								</div>
