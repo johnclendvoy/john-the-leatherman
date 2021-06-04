@@ -32,6 +32,10 @@ class OrderController extends Controller
 
 	public function store(Request $request)
 	{
+        // TODO fix stripe
+        // also put the key back in the env
+        return back()->withErrors(['failed_payment' => 'Sorry, the checkout is unavailable at this time. Your card has not been processed. Please contact me via email to set up an order.']);
+
 		// check if any items have been purchased be someone else while it was in the cart
 		foreach(Cart::items() as $leather) {
 			if($leather->available != 1) {
